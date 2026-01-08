@@ -13,7 +13,7 @@ This repository contains two professional-grade plugins that give you a complete
 
 ### 🎯 Marketing Suite
 **Your Marketing Team**
-- 12 specialized marketing skills (NEW: viral-artifact-generator, founder-led-social)
+- 14 specialized marketing skills (v1.2: +credit-campaign-builder, +nightly-build-narrator)
 - 3 workflow commands
 - 3 strategic agents
 - Utility scripts for tracking and exporting
