@@ -1,4 +1,4 @@
-# Marketing & Creative Suite
+# AI Marketing & Creative Suite
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub stars](https://img.shields.io/github/stars/robroyhobbs/marketing-skills?style=social)](https://github.com/robroyhobbs/marketing-skills/stargazers)
@@ -7,7 +7,7 @@
 
 This repository contains two professional-grade plugins that give you a complete marketing and creative production system.
 
-> Built for [Claude Code](https://claude.com/code) - The AI-powered CLI tool from Anthropic
+> Built for [AIGNE CLI](https://www.aigne.io/framework) - [Claude Code](https://claude.com/code) - AI-powered CLI tools from AIGNE and Anthropic
 
 ## 📦 What's Included
 
