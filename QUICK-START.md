@@ -48,6 +48,14 @@ Shows what you have, what's missing, what to do first.
 
 ### Creating Social Content
 
+**Product-shaped marketing (NEW in v1.1-1.2):**
+```
+/viral-artifact-generator    # Turn usage into shareable proof
+/founder-led-social          # Founder posts from product updates
+/credit-campaign-builder     # Design incentive campaigns
+/nightly-build-narrator      # Auto-generate daily ship posts
+```
+
 **For strategy first:**
 ```
 /ai-creative-strategist
@@ -118,6 +126,35 @@ Tell it the format and topic.
 
 Give it your blog post/newsletter/landing page.
 Get social content for all platforms.
+
+---
+
+---
+
+## 📦 Repository Structure
+
+This repository contains **two plugins**:
+
+### Marketing Suite (14 skills)
+Traditional + Product-Shaped Marketing
+
+**Install:**
+```
+/plugin marketplace add github:robroyhobbs/marketing-skills
+/plugin install marketing-suite@marketing-skills
+```
+
+**Skills:** brand-voice, positioning-angles, keyword-research, lead-magnet, direct-response-copy, email-sequences, seo-content, newsletter, content-atomizer, viral-artifact-generator, founder-led-social, credit-campaign-builder, nightly-build-narrator, orchestrator
+
+### Creative Suite (6 skills)
+AI-Powered Creative Generation
+
+**Install:**
+```
+/plugin install creative-suite@marketing-skills
+```
+
+**Skills:** ai-creative-strategist, ai-image-generation, ai-product-photo, ai-product-video, ai-social-graphics, ai-talking-head
 
 ---
 
