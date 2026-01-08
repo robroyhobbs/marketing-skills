@@ -1,0 +1,23 @@
+# Development marketplace (local testing only)
+dev-marketplace/
+
+# OS files
+.DS_Store
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+
+# Personal notes
+notes/
+scratch/
+
+# Export directories (user-specific)
+marketing-suite-exports/
+
+# Metrics files (user-specific)
+.marketing-suite-assets.json
+.marketing-suite-metrics.csv

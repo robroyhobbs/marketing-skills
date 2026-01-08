@@ -1,0 +1,44 @@
+{
+  "name": "marketing-suite",
+  "version": "1.0.0",
+  "description": "Complete marketing toolkit with orchestrated workflows for brand voice, positioning, content strategy, lead generation, and conversion optimization",
+  "author": {
+    "name": "AIGNE",
+    "email": "hello@aigne.io"
+  },
+  "license": "MIT",
+  "keywords": [
+    "marketing",
+    "copywriting",
+    "content-strategy",
+    "seo",
+    "lead-generation",
+    "email-marketing",
+    "brand-voice",
+    "positioning",
+    "newsletter",
+    "conversion-optimization"
+  ],
+  "skills": [
+    "orchestrator",
+    "brand-voice",
+    "positioning-angles",
+    "keyword-research",
+    "lead-magnet",
+    "direct-response-copy",
+    "email-sequences",
+    "seo-content",
+    "newsletter",
+    "content-atomizer"
+  ],
+  "commands": [
+    "audit",
+    "launch",
+    "leads"
+  ],
+  "agents": [
+    "marketing-strategist",
+    "copy-editor",
+    "content-planner"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "creative-workflow-suggester",
+  "description": "Suggests next skill in the creative workflow after completing current skill",
+  "trigger": "after-skill",
+  "script": "./suggest-next-creative.sh"
+}
