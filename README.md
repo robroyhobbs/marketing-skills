@@ -13,7 +13,7 @@ This repository contains two professional-grade plugins that give you a complete
 
 ### 🎯 Marketing Suite
 **Your Marketing Team**
-- 10 specialized marketing skills
+- 12 specialized marketing skills (NEW: viral-artifact-generator, founder-led-social)
 - 3 workflow commands
 - 3 strategic agents
 - Utility scripts for tracking and exporting
@@ -106,6 +106,12 @@ Builds your email list and conversion funnel.
 ---
 
 ### Creating Social Media Content
+
+**Product-shaped marketing (NEW):**
+```bash
+/viral-artifact-generator    # Turn product usage into shareable proof
+/founder-led-social          # Authentic founder posts for Twitter/LinkedIn
+```
 
 **Strategic approach:**
 ```bash

@@ -1,7 +1,7 @@
 {
   "name": "marketing-suite",
-  "version": "1.0.0",
-  "description": "Complete marketing toolkit with orchestrated workflows for brand voice, positioning, content strategy, lead generation, and conversion optimization",
+  "version": "1.1.0",
+  "description": "Complete marketing toolkit with orchestrated workflows for brand voice, positioning, content strategy, lead generation, conversion optimization, and product-shaped marketing",
   "author": {
     "name": "AIGNE",
     "email": "hello@aigne.io"
@@ -17,7 +17,11 @@
     "brand-voice",
     "positioning",
     "newsletter",
-    "conversion-optimization"
+    "conversion-optimization",
+    "viral-marketing",
+    "founder-led-marketing",
+    "product-marketing",
+    "social-media"
   ],
   "skills": [
     "orchestrator",
@@ -29,7 +33,9 @@
     "email-sequences",
     "seo-content",
     "newsletter",
-    "content-atomizer"
+    "content-atomizer",
+    "viral-artifact-generator",
+    "founder-led-social"
   ],
   "commands": [
     "audit",

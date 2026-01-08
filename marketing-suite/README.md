@@ -13,7 +13,7 @@ Think of this as hiring a complete marketing team:
 - **Email Marketer** - Builds email sequences
 - **Social Media Manager** - Creates multi-platform content
 
-Except instead of hiring 5 people, you have one plugin with 10 skills, 3 commands, and 3 specialized agents.
+Except instead of hiring 5 people, you have one plugin with 12 skills, 3 commands, and 3 specialized agents.
 
 ## Installation
 
@@ -54,8 +54,10 @@ claude-code plugin install /path/to/marketing-suite
 - **`/newsletter`** - Build newsletter formats and editions
 - **`/email-sequences`** - Design email sequences that convert subscribers
 
-### 📢 Distribution
+### 📢 Distribution & Product-Shaped Marketing
 - **`/content-atomizer`** - Transform one piece into platform-optimized social assets
+- **`/viral-artifact-generator`** - Create shareable proof-points from product usage (NEW in v1.1)
+- **`/founder-led-social`** - Convert product updates into authentic founder-voice social posts (NEW in v1.1)
 
 ## Quick Start
 
@@ -114,6 +116,13 @@ The orchestrator will ask questions about your business and goals, then recommen
 /newsletter          # Announcement edition
 ```
 
+**"I'm Building in Public" (NEW)**
+```bash
+/founder-led-social          # Daily shipping updates for Twitter/LinkedIn
+/viral-artifact-generator    # Turn product usage into shareable proof
+# Every feature ship becomes a distribution opportunity
+```
+
 ## Skill Dependencies
 
 ```
@@ -132,8 +141,12 @@ EXECUTION (requires strategy)
 └── email-sequences
 
 DISTRIBUTION
-└── content-atomizer
+├── content-atomizer
+├── viral-artifact-generator (NEW)
+└── founder-led-social (NEW)
 ```
+
+**New in v1.1:** Product-shaped marketing skills turn your product usage and shipping activity into distribution engines.
 
 ## Features
 
@@ -188,6 +201,84 @@ Save skill outputs to organized files:
 ```
 
 All exports are saved to `~/marketing-suite-exports/` organized by category.
+
+## What's New in v1.1
+
+### Product-Shaped Marketing
+
+Two new skills focused on turning product usage and shipping activity into marketing fuel:
+
+#### `/viral-artifact-generator`
+**Create shareable proof-points from product usage**
+
+Instead of writing content ABOUT your product, create artifacts FROM your product that prove it works.
+
+**Use cases:**
+- AI agents: Generate "ghost replay" videos showing agents at work
+- Data tools: Before/after visualizations of transformations
+- Design tools: Public galleries of user creations
+- Productivity tools: Time-saved metrics and accomplishment sharing
+
+**Triggers:**
+- "create viral artifact from [feature]"
+- "generate shareable proof for [product]"
+- "product-shaped marketing for [update]"
+
+**Outputs:** Specifications for replay videos, public galleries, collaboration loops, and platform-optimized sharing mechanics.
+
+**Based on:** Manus's replay mechanics, Loom's video sharing, Notion's template gallery, Figma's multiplayer loops.
+
+---
+
+#### `/founder-led-social`
+**Convert product updates into authentic founder-voice social posts**
+
+Turn every feature ship into a founder story for Twitter and LinkedIn. Build in public, share the journey, grow your audience.
+
+**Use cases:**
+- Daily "build in public" updates
+- Feature launch announcements
+- Milestone celebrations
+- Technical deep-dives
+- Lessons learned threads
+
+**Triggers:**
+- "founder post from [feature]"
+- "build-in-public update for [launch]"
+- "ship announcement thread"
+- "turn this into a social post"
+
+**Outputs:** Platform-optimized posts (Twitter threads, LinkedIn stories), engagement tactics, visual recommendations, 30-second "vibe check" video scripts.
+
+**Based on:** How Pieter Levels, Sahil Lavingia, Guillermo Rauch, and other successful founders market through authentic social presence.
+
+---
+
+### Why These Skills Matter
+
+**The insight:** The best AI product companies (Manus, Lovable) win through product-shaped marketing, not ads.
+
+**Key learnings:**
+1. **Marketing as compute**: Give away credits/usage for marketing, not COGS
+2. **Observable labor**: Show AI working (replays, time-lapses) = trust
+3. **Founder-led**: Personal accounts > company pages (3-5x engagement)
+4. **Daily shipping**: Consistent progress posts build audience
+5. **Viral loops**: Every usage generates shareable artifacts
+
+**The compounding effect:**
+```
+Ship feature
+→ Generate viral artifact
+→ Create founder post
+→ Post drives views
+→ Viewers sign up
+→ New users generate artifacts
+→ Cycle repeats
+```
+
+This is how you build a marketing engine that scales with product usage, not ad spend.
+
+---
 
 ## Philosophy
 
