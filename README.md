@@ -1,8 +1,13 @@
-# AIGNE Marketing & Creative Plugins
+# Marketing & Creative Suite
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/robroyhobbs/marketing-skills?style=social)](https://github.com/robroyhobbs/marketing-skills/stargazers)
 
 **Your complete marketing and creative team in Claude Code**
 
 This repository contains two professional-grade plugins that give you a complete marketing and creative production system.
+
+> Built for [Claude Code](https://claude.com/code) - The AI-powered CLI tool from Anthropic
 
 ## 📦 What's Included
 
@@ -30,16 +35,18 @@ This repository contains two professional-grade plugins that give you a complete
 ### Installation
 
 ```bash
-# 1. Add the dev marketplace
-/plugin marketplace add dev-marketplace
+# 1. Add the marketplace from GitHub
+/plugin marketplace add github:robroyhobbs/marketing-skills
 
 # 2. Install both plugins
-/plugin install marketing-suite@dev-marketplace
-/plugin install creative-suite@dev-marketplace
+/plugin install marketing-suite@marketing-skills
+/plugin install creative-suite@marketing-skills
 
-# 3. Verify
+# 3. Verify installation
 /help
 ```
+
+You should see all the skills and commands available!
 
 ### First Time User?
 
