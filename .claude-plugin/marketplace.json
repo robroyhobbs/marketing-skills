@@ -12,8 +12,8 @@
   "plugins": [
     {
       "name": "marketing-suite",
-      "description": "Complete marketing toolkit with orchestrated workflows for brand voice, positioning, content strategy, lead generation, and conversion optimization",
-      "version": "1.0.0",
+      "description": "Complete marketing toolkit with orchestrated workflows for brand voice, positioning, content strategy, lead generation, conversion optimization, and personal voice profiles",
+      "version": "1.3.0",
       "source": "github:robroyhobbs/marketing-skills/marketing-suite"
     },
     {

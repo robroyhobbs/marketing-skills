@@ -1,7 +1,7 @@
 {
   "name": "marketing-suite",
-  "version": "1.2.0",
-  "description": "Complete marketing toolkit with orchestrated workflows for brand voice, positioning, content strategy, lead generation, conversion optimization, and product-shaped marketing. Now includes credit campaigns and automated shipping updates.",
+  "version": "1.3.0",
+  "description": "Complete marketing toolkit with orchestrated workflows for brand voice, positioning, content strategy, lead generation, conversion optimization, and product-shaped marketing. Now includes personal voice profiles for authentic content creation.",
   "author": {
     "name": "AIGNE",
     "email": "hello@aigne.io"
@@ -24,11 +24,14 @@
     "social-media",
     "credit-campaigns",
     "build-in-public",
-    "daily-shipping"
+    "daily-shipping",
+    "personal-voice",
+    "thought-leadership"
   ],
   "skills": [
     "orchestrator",
     "brand-voice",
+    "matt-mckinney-voice",
     "positioning-angles",
     "keyword-research",
     "lead-magnet",
