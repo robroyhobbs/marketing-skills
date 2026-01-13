@@ -13,7 +13,7 @@ Think of this as hiring a complete marketing team:
 - **Email Marketer** - Builds email sequences
 - **Social Media Manager** - Creates multi-platform content
 
-Except instead of hiring 5 people, you have one plugin with 12 skills, 3 commands, and 3 specialized agents.
+Except instead of hiring 5 people, you have one plugin with 15 skills, 3 commands, and 3 specialized agents.
 
 ## Installation
 
@@ -42,6 +42,7 @@ claude-code plugin install /path/to/marketing-suite
 ### 🎯 Skills - Strategy & Foundation
 - **`/orchestrator`** - Smart router that diagnoses your situation and recommends the right skill sequence
 - **`/brand-voice`** - Define or extract your consistent brand voice
+- **`/matt-mckinney-voice`** - Write content in Matt McKinney's authentic voice (NEW in v1.3)
 - **`/positioning-angles`** - Find differentiated positioning that makes you stand out
 
 ### 📊 Research & Planning
@@ -128,6 +129,7 @@ The orchestrator will ask questions about your business and goals, then recommen
 ```
 FOUNDATION (start here)
 ├── brand-voice (how you sound)
+├── matt-mckinney-voice (personal voice profile - NEW v1.3)
 └── positioning-angles (how you're different)
 
 STRATEGY (builds on foundation)
@@ -147,6 +149,8 @@ DISTRIBUTION
 ```
 
 **New in v1.1:** Product-shaped marketing skills turn your product usage and shipping activity into distribution engines.
+
+**New in v1.3:** Personal voice profiles for authentic thought leadership content.
 
 ## Features
 
@@ -277,6 +281,44 @@ Ship feature
 ```
 
 This is how you build a marketing engine that scales with product usage, not ad spend.
+
+---
+
+## What's New in v1.3
+
+### Personal Voice Profiles
+
+New skill for capturing and writing in individual voices:
+
+#### `/matt-mckinney-voice`
+**Write content in Matt McKinney's authentic voice**
+
+An interview-driven workflow that extracts insights before writing, then produces articles in Matt's direct, problem-focused style.
+
+**Voice characteristics:**
+- Direct and real - no hedging or marketing fluff
+- Problem-solver's voice - issue → fix → impact
+- Grounded in experience - practitioner, not theorist
+- Concise - short sentences, get to the point
+
+**Use cases:**
+- Blog posts and thought leadership articles
+- Industry commentary
+- Product marketing content
+- Technical translation pieces
+
+**Triggers:**
+- "write article in matt's voice"
+- "draft post mckinney style"
+- "write in my voice"
+
+**Workflow:**
+1. Interview phase - 6 questions to extract the specific angle
+2. Template selection - Problem/Solution or Comparison format
+3. Voice application - Direct tone, signature frameworks
+4. Quality check - Against anti-fluff checklist
+
+**This is a reference implementation.** Use the brand-voice skill to create your own personal voice profile.
 
 ---
 

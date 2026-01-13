@@ -13,7 +13,7 @@ This repository contains two professional-grade plugins that give you a complete
 
 ### 🎯 Marketing Suite
 **Your Marketing Team**
-- 14 specialized marketing skills (v1.2: +credit-campaign-builder, +nightly-build-narrator)
+- 15 specialized marketing skills (v1.3: +matt-mckinney-voice)
 - 3 workflow commands
 - 3 strategic agents
 - Utility scripts for tracking and exporting
@@ -236,7 +236,7 @@ Save all skill outputs to organized files.
 ### Plugin Structure
 ```
 marketing-suite/
-├── skills/          # 10 marketing skills
+├── skills/          # 15 marketing skills
 ├── commands/        # 3 workflow commands
 ├── agents/          # 3 specialized agents
 ├── hooks/           # Workflow automation
@@ -256,6 +256,7 @@ creative-suite/
 **Foundation:**
 ```bash
 /brand-voice              # How you sound
+/matt-mckinney-voice      # Write in Matt's authentic voice (NEW)
 /positioning-angles       # What makes you different
 ```
 
