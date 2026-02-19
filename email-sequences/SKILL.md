@@ -1051,7 +1051,7 @@ After generating the full sequence, display a summary overview using the Sequenc
 
 ### Context
 - Lead magnet: Free positioning-angles skill
-- Paid offer: 9-skill marketing pack ([YOUR PRICE])
+- Paid offer: Vibe Marketing Skills pack ($49 early adopter / $149 regular)
 - Bridge: One skill -> want the other 8
 - Audience: Founders/marketers using Claude
 
@@ -1176,15 +1176,15 @@ For now, keep finding angles. The skill is yours forever.
 
 **Send:** Day 8
 **Subject:** The full system (if you want it)
-**Preview:** 9 skills, one methodology, [YOUR PRICE]
+**Preview:** 9 skills, one methodology, $49 early adopter price
 
 You've been using the positioning skill for a week.
 
 If you're finding it useful, here's what else is available:
 
-**[YOUR PRODUCT NAME] -- [YOUR PRICE]**
+**Vibe Marketing Skills -- $49 (early adopter price, regular $149)**
 
-9 skills that give Claude a complete marketing methodology:
+11 skills that give Claude a complete marketing methodology:
 
 | Skill | What It Does |
 |-------|--------------|
@@ -1197,8 +1197,8 @@ If you're finding it useful, here's what else is available:
 | newsletter | Creates email editions |
 | email-sequences | Builds sequences that convert |
 | content-atomizer | Turns 1 piece into 15 |
-
-Plus the orchestrator -- a meta-skill that tells you which skill to run and in what order.
+| creative | AI image + video production |
+| start-here | Orchestrator that routes everything |
 
 **This is for you if:**
 - You use Claude for marketing but get generic output
@@ -1210,7 +1210,7 @@ Plus the orchestrator -- a meta-skill that tells you which skill to run and in w
 - You want someone to do it for you (this is a tool, not a service)
 - You don't do your own marketing
 
-[YOUR PRICE] once. All 9 skills. All future updates.
+$49 once. All 11 skills. All future updates. Price goes to $149 when the early adopter window closes.
 
 [GET THE FULL SYSTEM -- LINK]
 
@@ -1228,7 +1228,7 @@ No pressure. The positioning skill is yours either way.
 
 Last email about this, then I'll leave you alone.
 
-The skills pack is [YOUR PRICE]. That's less than the cost of one hour with a consultant.
+The skills pack is $49 for early adopters. Regular price is $149 -- still less than one hour with a consultant.
 
 For context:
 - A brand strategist charges $2,000-5,000
@@ -1237,7 +1237,7 @@ For context:
 
 You get methodology that handles all of it. Reusable. Forever.
 
-The question isn't "is [YOUR PRICE] a lot?" It's "what's one good landing page worth?"
+The question isn't "is $49 a lot?" It's "what's one good landing page worth?"
 
 If a better angle, clearer copy, or smarter content strategy gets you even ONE extra customer, you've made the money back.
 
