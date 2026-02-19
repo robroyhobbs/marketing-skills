@@ -140,7 +140,7 @@ X prioritizes content in the **For You** feed based on recency, engagement, rele
 
 [One-line elaboration]
 
-🧵 A thread on [topic]:
+A thread on [topic]:
 ```
 
 **Tweet 2: The Setup**
@@ -164,11 +164,11 @@ First, some context:
 ```
 TL;DR:
 
-• [Point 1]
-• [Point 2]
-• [Point 3]
-• [Point 4]
-• [Point 5]
+- [Point 1]
+- [Point 2]
+- [Point 3]
+- [Point 4]
+- [Point 5]
 ```
 
 **Tweet X: The CTA**
@@ -351,7 +351,7 @@ What's your experience with [topic]?
 
 ---
 
-💾 Save | 📤 Share | 💬 Comment
+Save | Share | Comment
 ```
 
 **The List Caption:**
@@ -360,13 +360,13 @@ What's your experience with [topic]?
 
 Here's exactly what I mean:
 
-1️⃣ [Point + brief explanation]
+1. [Point + brief explanation]
 
-2️⃣ [Point + brief explanation]
+2. [Point + brief explanation]
 
-3️⃣ [Point + brief explanation]
+3. [Point + brief explanation]
 
-Which one resonates most? 👇
+Which one resonates most?
 ```
 
 **The Teach Caption:**
@@ -378,11 +378,11 @@ Here's what most people don't realize:
 [Explanation - 2-3 paragraphs]
 
 Try this instead:
-→ [Action 1]
-→ [Action 2]
-→ [Action 3]
+> [Action 1]
+> [Action 2]
+> [Action 3]
 
-Save this for later 📌
+Save this for later
 ```
 
 ---
@@ -685,6 +685,295 @@ CTA: "What do you think?"
 
 ---
 
+## Threads Deep Dive
+
+### The Algorithm (February 2026)
+
+Threads uses a **blended chronological + interest-based feed** that pulls from your Instagram social graph while incorporating topic-based discovery.
+
+**Priority signals:**
+
+1. **Reply depth** — Multi-reply conversations signal high-quality threads
+2. **Reshares** — The primary amplification mechanism on Threads
+3. **Quote-posts** — Adding commentary to a reshare significantly boosts reach
+4. **Cross-graph engagement** — Engagement from accounts outside your IG follower graph indicates broader appeal
+5. **Topical relevance** — Posts matching trending topics or user interests get pushed to discovery
+6. **Instagram relationship signals** — DMs, follows, and interactions on IG carry over
+
+**Platform characteristics:**
+- No hashtags initially; topics added via tag system (limited utility)
+- Character limit: 500 characters per post
+- Up to 10 images or one 5-minute video per post
+- Fediverse integration (ActivityPub) means posts can be seen on Mastodon and other federated platforms
+- No DMs (as of early 2026) — engagement is public only
+- No ads (yet) — organic reach is high while the platform matures
+
+**Current opportunity:**
+- Lower competition than Twitter/X for equivalent audiences
+- Instagram cross-posting drives initial distribution
+- Text-forward format favors thoughtful, opinion-led content
+- Reply culture is more civil and constructive than X
+
+### Threads Post Templates
+
+**The Conversational Take:**
+```
+[Opinion or observation in plain language]
+
+I've been thinking about this because [context].
+
+The thing nobody mentions: [insight].
+
+What's your experience?
+```
+
+**The Mini-Thread (Multi-Post):**
+```
+Post 1: [Bold claim or observation]
+
+Post 2: Here's what I mean:
+[Supporting point with example]
+
+Post 3: And the part nobody talks about:
+[Deeper insight]
+
+Post 4: Bottom line: [takeaway]
+```
+
+**The Quote-Post Commentary:**
+```
+[Reshare someone else's post]
+
+This is underrated. Here's why:
+[Your take in 2-3 sentences]
+```
+
+### Threads Hook Formulas
+
+**Pattern 1: Casual Insight**
+> "Something I've noticed about [topic] that I can't stop thinking about:"
+
+**Pattern 2: Friendly Disagreement**
+> "I love [person/brand] but I think they're wrong about [thing]. Here's my take:"
+
+**Pattern 3: Behind the Scenes**
+> "Okay honest question for [group]: does anyone else [relatable thing]?"
+
+**Pattern 4: IG Cross-Reference**
+> "I posted about this on IG but want to go deeper here..."
+
+### Top Threads Creators to Study
+
+**Adam Mosseri** (@mosseri)
+- Format: Platform updates, casual observations
+- Hook style: Direct announcements, behind-the-scenes
+- What to learn: Conversational tone, platform-native feel
+
+**Gary Vaynerchuk** (@garyvee)
+- Format: Motivational takes, business advice
+- Hook style: Bold statements, direct address
+- What to learn: High frequency, opinion-led posts
+
+---
+
+## Bluesky Deep Dive
+
+### The Algorithm (February 2026)
+
+Bluesky uses a **decentralized AT Protocol** with user-controlled feed algorithms. Users can choose, build, or subscribe to custom feeds.
+
+**Priority signals:**
+
+1. **Likes** — Basic engagement signal across all feed algorithms
+2. **Reposts** — Amplification to follower network
+3. **Reply chains** — Deep conversations surface in algorithmic feeds
+4. **Custom feed subscriptions** — Users opt into topic feeds (e.g., "Science," "Tech News," "Marketing")
+5. **Labeler signals** — Community moderators and labelers can surface or suppress content
+6. **Recency** — Chronological timeline still the default for many users
+
+**Platform characteristics:**
+- Character limit: 300 characters per post
+- Decentralized (AT Protocol) — users can self-host, move accounts between providers
+- No advertising — purely organic distribution
+- Custom feeds are the killer feature: curated algorithmic feeds anyone can create
+- Starter packs help new users find communities quickly
+- Growing rapidly among tech, media, journalism, and academic communities
+- Domain-as-handle (e.g., yoursite.com as your handle) builds credibility
+
+**Current opportunity:**
+- Smaller but highly engaged and educated audience
+- Disproportionately tech-savvy and media-literate
+- Strong text culture — thoughtful writing outperforms hot takes
+- Custom feeds let you target niche audiences with precision
+- Growing post-Twitter exodus audience (journalists, academics, developers)
+
+### Bluesky Post Templates
+
+**The Thoughtful Observation:**
+```
+[Nuanced take on industry topic]
+
+The thing that gets lost in the discourse:
+[2-3 sentences of substance]
+```
+
+**The Link Post:**
+```
+[Context for why this matters]
+
+[Link to article/resource]
+
+Key takeaway: [one-line summary]
+```
+
+**The Community Question:**
+```
+Genuine question for [group]:
+
+[Specific, thoughtful question]
+
+I've been [context for why you're asking].
+Curious what others have experienced.
+```
+
+### Bluesky Hook Formulas
+
+**Pattern 1: Informed Take**
+> "[Topic] is more nuanced than people realize. Here's what the data actually shows:"
+
+**Pattern 2: Experience Report**
+> "I've been [doing X] for [time]. Here's what surprised me:"
+
+**Pattern 3: Useful Curation**
+> "Best [resources/tools/articles] I found this week on [topic]:"
+
+**Pattern 4: Platform Meta**
+> "One thing I appreciate about the conversation here vs other platforms:"
+
+### Top Bluesky Creators to Study
+
+**Ryan Broderick** (@broderick)
+- Format: Media criticism, internet culture analysis
+- Hook style: Sharp observation + context
+- What to learn: Substantive text-first posts
+
+**Molly White** (@mollywhite)
+- Format: Tech accountability, web3 criticism
+- Hook style: Data-driven, precise
+- What to learn: Credibility through specificity
+
+---
+
+## Reddit Deep Dive
+
+### The Algorithm (February 2026)
+
+Reddit uses a **karma-weighted voting system** combined with recency decay. Content surfaces through subreddit feeds, the Home feed (subscribed subreddits), and the Popular/All feeds.
+
+**Priority signals:**
+
+1. **Upvote/downvote ratio** — Net karma determines post ranking within a subreddit
+2. **Velocity of upvotes** — Fast upvotes in the first hour are critical for reaching Hot
+3. **Comment count and depth** — Discussion depth is a strong engagement signal
+4. **Subreddit-specific norms** — Each community has rules, culture, and moderators
+5. **Account age and karma** — Newer/low-karma accounts face posting restrictions
+6. **Award signals** — Gilded/awarded posts get visibility boosts
+
+**Platform characteristics:**
+- Pseudonymous by default — personal branding is secondary to content quality
+- Subreddit-specific audiences with strict community rules
+- Self-promotion is heavily penalized — value-first or get removed
+- Long-form text posts perform well in discussion-oriented subreddits
+- AMA (Ask Me Anything) format for thought leadership
+- Comments often drive more value than the original post
+- Reddit search is weak; Google indexes Reddit content well
+- Reddit's growing influence on SEO (Google now surfaces Reddit in search results)
+
+**Current opportunity:**
+- Google's "Reddit results" feature makes subreddit content discoverable in search
+- High-trust environment for authentic expertise
+- Longer shelf life than social posts (top posts surface for days/weeks)
+- Strong for B2B thought leadership in niche subreddits
+- Community trust transfers to your brand when done right
+
+### Reddit Content Strategies
+
+**The Value Post:**
+```
+Title: [Specific, descriptive title — no clickbait]
+
+Body:
+[Context: who you are and why you're qualified]
+
+[The actual value — detailed, specific, no fluff]
+
+[Step-by-step breakdown if applicable]
+
+[Disclaimer if relevant: "I work at X" for transparency]
+
+Edit: [Respond to common questions in edits]
+```
+
+**The AMA Strategy:**
+```
+Title: I'm [credentials]. I [impressive/interesting thing]. AMA.
+
+Body:
+[Brief bio — 3-4 sentences]
+[What you can answer questions about]
+[Proof/verification]
+
+[Spend 2-3 hours answering thoughtfully]
+```
+
+**The Comment Strategy (Often More Effective):**
+```
+[Find trending posts in your niche subreddits]
+[Add genuinely useful commentary]
+[Share specific experience or data]
+[Never link to your own content in comments unless asked]
+```
+
+### Reddit-Specific Rules
+
+1. **Read the subreddit rules before posting** — Every subreddit has unique rules
+2. **No overt self-promotion** — The 90/10 rule: 90% value, 10% self-reference
+3. **Be transparent** — Disclose affiliations or you'll be banned
+4. **Long-form wins** — Detailed, well-structured posts outperform short ones
+5. **Engage in comments** — The OP (original poster) should stay active in discussion
+6. **Timing matters** — Post when your target subreddit is most active (check subreddit stats)
+7. **Cross-posting** — Share relevant content to related subreddits (but don't spam)
+
+### Key Subreddits for Marketing Content
+
+| Subreddit | Audience | Best Content Type |
+|-----------|----------|-------------------|
+| r/marketing | Marketing professionals | Strategy, case studies |
+| r/entrepreneur | Founders, solopreneurs | Growth stories, tactics |
+| r/startups | Startup founders | Growth hacking, lessons learned |
+| r/smallbusiness | SMB owners | Practical advice, tools |
+| r/SaaS | SaaS founders | Product marketing, growth |
+| r/content_marketing | Content marketers | Distribution, SEO |
+| r/socialmedia | Social media managers | Platform strategies |
+| r/copywriting | Copywriters | Technique, critique |
+| [Niche subreddit] | Your specific audience | Industry-specific value |
+
+### Reddit Hook Formulas
+
+**Pattern 1: The Breakdown**
+> "I analyzed [X] [things] and here's what I found:"
+
+**Pattern 2: The How-To**
+> "How I [achieved result] — detailed breakdown with numbers"
+
+**Pattern 3: The Honest Review**
+> "I tried [thing] for [time period]. Here's my honest take:"
+
+**Pattern 4: The Resource List**
+> "[Number] [resources] that actually helped me [outcome]"
+
+---
+
 ## Cross-Platform Content Calendar
 
 ### The 5-3-2 Weekly Rhythm
@@ -703,25 +992,25 @@ CTA: "What do you think?"
 
 ### Weekly Schedule Template
 
-| Day | LinkedIn | Twitter | Instagram | TikTok | YouTube |
-|-----|----------|---------|-----------|--------|---------|
-| Mon | Carousel | Thread | Carousel | Educational | Short |
-| Tue | Text post | Single tweets | Story | — | — |
-| Wed | — | Thread | Reel | Hot take | — |
-| Thu | Text post | Single tweets | Story | Tutorial | Short |
-| Fri | Carousel | — | Carousel | — | — |
-| Sat | — | Single tweets | Reel | Personal | — |
-| Sun | — | — | Story | — | Long-form |
+| Day | LinkedIn | Twitter | Instagram | TikTok | YouTube | Threads | Bluesky | Reddit |
+|-----|----------|---------|-----------|--------|---------|---------|---------|--------|
+| Mon | Carousel | Thread | Carousel | Educational | Short | Take | Observation | — |
+| Tue | Text post | Single tweets | Story | — | — | Reply thread | Link post | — |
+| Wed | — | Thread | Reel | Hot take | — | — | — | Value post |
+| Thu | Text post | Single tweets | Story | Tutorial | Short | Quote-post | Question | — |
+| Fri | Carousel | — | Carousel | — | — | Mini-thread | — | Comment |
+| Sat | — | Single tweets | Reel | Personal | — | — | Curation | — |
+| Sun | — | — | Story | — | Long-form | — | — | — |
 
 ### Content Repurposing Matrix
 
-| Source | → LinkedIn | → Twitter | → Instagram | → TikTok | → YouTube |
-|--------|------------|-----------|-------------|----------|-----------|
-| Blog Post | Carousel, 2x text | Thread, 3x single | Carousel, Reel | 2-3 clips | Short, Long |
-| Newsletter | Text post, carousel | Thread | Carousel | 1-2 clips | Short |
-| Podcast | Quote posts | Thread, clips | Reel clips | 3-5 clips | Full episode |
-| Video | Key points as text | Thread of insights | Reel clips | Repurpose | Source |
-| Data/Research | Carousel | Thread | Carousel | Green screen | Short |
+| Source | LinkedIn | Twitter | Instagram | TikTok | YouTube | Threads | Bluesky | Reddit |
+|--------|----------|---------|-----------|--------|---------|---------|---------|--------|
+| Blog Post | Carousel, 2x text | Thread, 3x single | Carousel, Reel | 2-3 clips | Short, Long | Key insight | Summary + link | Detailed breakdown |
+| Newsletter | Text post, carousel | Thread | Carousel | 1-2 clips | Short | Top takeaway | Link + context | Cross-post value |
+| Podcast | Quote posts | Thread, clips | Reel clips | 3-5 clips | Full episode | Guest insights | Key quotes | AMA follow-up |
+| Video | Key points as text | Thread of insights | Reel clips | Repurpose | Source | Commentary | Summary | How-to post |
+| Data/Research | Carousel | Thread | Carousel | Green screen | Short | Analysis | Data + take | Detailed analysis |
 
 ---
 
@@ -742,9 +1031,9 @@ CTA: "What do you think?"
 - "Bookmark this thread"
 
 ### Instagram CTAs
-- "Save this post for later 📌"
+- "Save this post for later"
 - "Send this to someone who needs it"
-- "Drop a [emoji] if this resonated"
+- "Drop a comment if this resonated"
 - "Comment [word] for [resource]"
 - "Follow for daily [topic]"
 
@@ -761,6 +1050,24 @@ CTA: "What do you think?"
 - "Leave a comment with [question]"
 - "Like this video if it helped"
 - "Join the [membership/channel]"
+
+### Threads CTAs
+- "What's your take? Reply below"
+- "Repost if this resonated"
+- "Follow for more [topic]"
+- "Quote this with your experience"
+
+### Bluesky CTAs
+- "What's been your experience?"
+- "Repost for your followers"
+- "Follow for more [topic] posts"
+- "Add this to your [topic] feed"
+
+### Reddit CTAs
+- "Happy to answer questions in the comments"
+- "What's your experience with [topic]?"
+- "If this was useful, I'll do a Part 2 on [related topic]"
+- "Edit: Adding more detail based on the questions below"
 
 ---
 
@@ -800,3 +1107,24 @@ CTA: "What do you think?"
 3. Thumbnail too cluttered
 4. Title doesn't match content
 5. No cards/end screens
+
+### Threads Mistakes
+1. Cross-posting identical Twitter/X content (feels lazy)
+2. Using hashtag strategies (not how Threads works)
+3. Being overly promotional (community rejects it)
+4. Ignoring the reply culture (conversation is the point)
+5. Not leveraging Instagram cross-promotion
+
+### Bluesky Mistakes
+1. Using Twitter tone (too aggressive for Bluesky culture)
+2. Ignoring custom feeds (the main discovery mechanism)
+3. Not setting up domain-as-handle (missed credibility signal)
+4. Treating it like a broadcast channel (it rewards conversation)
+5. Over-posting (quality audience prefers substance over volume)
+
+### Reddit Mistakes
+1. Self-promoting without adding value (instant downvotes)
+2. Ignoring subreddit rules (leads to removal/ban)
+3. Short, low-effort posts (Reddit rewards depth)
+4. Not disclosing affiliations (community will find out)
+5. Arguing with critics instead of engaging constructively

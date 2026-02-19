@@ -1,6 +1,7 @@
 ---
 name: direct-response-copy
-description: "Write copy that converts. Use when writing landing pages, emails, sales copy, headlines, CTAs, social posts, or any persuasive content. Triggers on: make this convert, write copy for X, help me sell X, punch this up, write a landing page, write sales copy. Produces internet-native copy that sounds like a smart friend explaining something while quietly deploying every persuasion principle in the book. Includes complete reference material from Schwartz, Hopkins, Ogilvy, Halbert, Caples, Sugarman, and Collier."
+version: 7.0
+description: "Write copy that converts. Use when writing landing pages, emails, sales copy, headlines, CTAs, social posts, or any persuasive content. Triggers on: make this convert, write copy for X, help me sell X, punch this up, write a landing page, write sales copy, score this copy, generate headline variants. Produces internet-native copy that sounds like a smart friend explaining something while quietly deploying every persuasion principle in the book. Loads brand voice and positioning from memory, generates multiple variants for testing, scores copy on 7 dimensions, and suggests A/B tests. Includes complete reference material from Schwartz, Hopkins, Ogilvy, Halbert, Caples, Sugarman, and Collier. Reads: voice-profile.md, positioning.md, audience.md, creative-kit.md. Writes: ./campaigns/{name}/*.md, assets.md."
 ---
 
 # Direct Response Copy
@@ -8,6 +9,124 @@ description: "Write copy that converts. Use when writing landing pages, emails, 
 Here's what separates copy that converts from copy that just exists: the good stuff sounds like a person talking to you. Not a marketing team. Not a guru. Not a robot. A person who figured something out and wants to share it.
 
 That's what this skill does. It writes copy that feels natural while deploying the persuasion principles that actually work. The reader shouldn't notice the technique. They should just find themselves nodding along and clicking the button.
+
+Read `./brand/` per `_system/brand-memory.md`
+
+Follow all output formatting rules from `_system/output-format.md`
+
+---
+
+## Brand Memory Integration
+
+This skill reads brand context to make every piece of copy consistent with the brand's established identity.
+
+**Reads:** `voice-profile.md`, `positioning.md`, `audience.md`, `creative-kit.md` (all optional)
+
+On invocation, check for `./brand/` and load available context:
+
+1. **Load `voice-profile.md`** (if exists):
+   - Match the brand's tone, vocabulary, rhythm in all copy output
+   - Apply the voice DNA: sentence length patterns, jargon level, formality register
+   - Show: "Your voice is [tone summary]. All copy will match that register."
+
+2. **Load `positioning.md`** (if exists):
+   - Use the chosen angle as the copy's foundation
+   - The positioning angle determines the lead, the proof hierarchy, the CTA framing
+   - Show: "Your positioning angle is '[angle]'. Building copy around that frame."
+
+3. **Load `audience.md`** (if exists):
+   - Know who you are writing to: their awareness level, sophistication, pain points
+   - Match Schwartz awareness level to headline approach (see methodology below)
+   - Show: "Writing for [audience summary]. Awareness level: [level]."
+
+4. **Load `creative-kit.md`** (if exists):
+   - Visual consistency for landing pages: color palette, typography, image style
+   - Ensure copy references match the visual system
+   - Show: "Creative kit loaded -- copy will reference your visual system."
+
+5. **If `./brand/` does not exist:**
+   - Skip brand loading entirely. Do not error.
+   - Proceed without it -- this skill works standalone.
+   - The copy will be excellent either way; brand memory makes it consistent.
+   - Note: "I don't see a brand profile yet. You can run /start-here or /brand-voice first to set one up, or I'll work without it."
+
+---
+
+## What Are We Writing?
+
+Before diving into frameworks, establish the format. Ask the user or infer from context:
+
+  ①  LANDING PAGE
+     Hero, problem, solution, proof, CTA sections.
+     Typically 800-2000 words.
+     Structure: The Full Sequence (see methodology below).
+     Constraints: Mobile-first formatting, scannable, one primary CTA.
+
+  ②  SALES PAGE
+     Long-form. Full objection handling.
+     Story-driven. Typically 2000-5000 words.
+     Structure: Extended Full Sequence with founder story, extended proof, FAQ.
+     Constraints: Multiple CTA placements, risk reversal prominent.
+
+  ③  EMAIL
+     Single idea, single CTA.
+     Subject line + body. Under 500 words.
+     Structure: Hook, value, CTA. That is it.
+     Constraints: Subject line is the headline. Preview text matters. No images required.
+
+  ④  AD COPY
+     Platform-specific (Meta, Google, LinkedIn, TikTok).
+     Character limits apply. Hook-focused.
+     Constraints by platform:
+       Meta primary text: 125 chars (visible), 1000 max
+       Google responsive: 30-char headlines, 90-char descriptions
+       LinkedIn: 150 chars intro, 600 max
+       TikTok: 100 chars overlay, hook in first 2 seconds
+
+  ⑤  SOCIAL POST
+     Platform-native. Under 300 words typically.
+     Hook + value + CTA.
+     Constraints by platform:
+       LinkedIn: 1300 chars for engagement, 3000 max
+       Twitter/X: 280 chars, or thread format
+       Instagram: 2200 chars caption max
+
+  ⑥  GENERAL / OTHER
+     Any persuasive writing. Custom format.
+     Apply methodology below with user-specified constraints.
+
+Each mode applies the SAME methodology below but with format-specific
+constraints on length, structure, and CTA placement. State which mode
+you are using before generating copy.
+
+---
+
+## Iteration Detection
+
+Before starting, check if copy already exists for this project:
+
+### If campaign files exist in `./campaigns/{name}/`
+
+Do not start from scratch. Instead:
+
+1. Read the existing copy files.
+2. Present a summary of what exists:
+   ```
+   Existing copy found:
+   ├── landing-page.md    ✓  (1,247 words, last updated Feb 10)
+   ├── emails/            ✓  (3 emails in sequence)
+   └── ads/               ✗  (none yet)
+   ```
+3. Ask: "Do you want to revise the existing copy, add a new piece, or start fresh?"
+   - **Revise** -- load existing copy, apply scoring rubric, identify weak spots, rewrite
+   - **Add new** -- use existing copy as context for consistency, write new piece
+   - **Start fresh** -- run the full process below as if nothing exists
+
+### If no campaign files exist
+
+Proceed directly to copy generation using the methodology below.
+
+---
 
 ## The core principle
 
@@ -528,1640 +647,592 @@ If any answer is no, rewrite that part.
 The goal isn't to hide that you're selling. It's to sell like a human, with honesty, specificity, and respect for the reader's intelligence.
 
 ---
----
-
-# REFERENCE MATERIAL
-
-The following sections provide deeper frameworks and extensive examples.
-
----
----
-
-# Classic Direct Response Frameworks
-
-The fundamentals that haven't changed since 1923. Every modern conversion technique traces back to these principles.
-
----
-
-## Eugene Schwartz: The 5 Levels of Awareness (1966)
-
-From "Breakthrough Advertising." The most important framework for knowing what to say.
-
-Your headline and approach must match where your reader is:
-
-### Level 1: Unaware
-They don't know they have a problem.
-
-**Your job:** Lead with identity or emotion, not the problem.
-**Headline approach:** "Do you ever feel like..." or lead with transformation story.
-**Example:** "The diary of a bored housewife" (not selling anything yet, just connecting)
-
-### Level 2: Problem-Aware
-They know they have a problem but don't know solutions exist.
-
-**Your job:** Name the problem vividly, then introduce that solutions exist.
-**Headline approach:** Problem-focused headline, agitate, then reveal solution category.
-**Example:** "Are you ever tongue-tied at a party?" (Dale Carnegie)
-
-### Level 3: Solution-Aware
-They know solutions exist but don't know your product.
-
-**Your job:** Show your specific mechanism or approach is different/better.
-**Headline approach:** Lead with your unique mechanism or approach.
-**Example:** "A new way to remove wrinkles without surgery"
-
-### Level 4: Product-Aware
-They know your product but haven't bought yet.
-
-**Your job:** Overcome objections, add proof, create urgency.
-**Headline approach:** Lead with differentiator, offer, or proof.
-**Example:** "Now with 2x the cleaning power" or "Join 10,000 happy customers"
-
-### Level 5: Most Aware
-They know your product and want it. Just need a push.
-
-**Your job:** Make it easy. Price, offer, availability.
-**Headline approach:** Lead with the deal.
-**Example:** "$199 today only" or "Back in stock"
-
-**The rule:** The less aware they are, the longer your copy needs to be. Most aware = short. Unaware = long journey.
-
----
-
-## Claude Hopkins: Scientific Advertising (1923)
-
-The father of tested, measured advertising. Core principles:
-
-### 1. Advertising is salesmanship in print
-"The only purpose of advertising is to make sales."
-
-### 2. Reason-why copy
-Don't just claim. Explain WHY your product works. Hopkins spent 3 weeks researching Schlitz beer to find the "reason why" (the way they purified water). Every beer did it. Only Schlitz talked about it.
-
-### 3. Specificity creates believability
-"Cleans 99.6% of bacteria" beats "Cleans almost all bacteria."
-Numbers. Details. Process. These create belief.
-
-### 4. Offer service, not salesmanship
-"I never ask people to buy. The ads all offer service, perhaps a free sample. They sound altruistic. But they get a reading and action."
-
-### 5. Test everything
-Use coupons, codes, split tests. "Almost any question can be answered, cheaply, quickly, and finally, by a test campaign."
-
-### 6. Headlines do the heavy lifting
-"If you have 10 hours to spend on a piece of copy, spend 8 of them on the headline."
-
----
-
-## David Ogilvy: Confessions of an Advertising Man (1963)
-
-Ogilvy took Hopkins' principles and added brand-building sophistication.
-
-### The Rolls-Royce Principle
-"At 60 miles an hour, the loudest noise in this new Rolls-Royce comes from the electric clock."
-
-This headline works because:
-- It's specific (60 miles, electric clock)
-- It SHOWS don't tells (doesn't say "quiet car")
-- It's borrowed credibility (from a magazine review)
-- It creates a mental image
-
-Ogilvy spent 3 weeks researching. The headline came from a magazine quote. He wrote 26 headlines before picking this one.
-
-### Key Ogilvy principles:
-
-**On headlines:**
-- "On average, 5x as many people read the headline as read the body copy."
-- "Include the brand name in the headline."
-- "Headlines with news are remembered 22% more."
-- "Specifics are more credible than generalities."
-
-**On copy:**
-- "Write the way you talk. Naturally."
-- "Do not address your readers as though they were gathered together in a stadium. Address them as individuals."
-- "Tell the truth, but make the truth fascinating."
-- "Give facts. Readers remember facts, not adjectives."
-
-**On images:**
-- "Story appeal" in photos gets attention. The eye patch in Hathaway shirt ads worked because people wondered "what's the story?"
-- Photos of the product in use outperform product shots alone.
-
----
-
-## Gary Halbert: The Boron Letters (1984)
-
-Halbert wrote from prison to his son. Raw, practical, street-smart.
-
-### 1. Find a starving crowd first
-"What unique advantage would you want if opening a restaurant? The answer isn't location or great food. It's a starving crowd."
-
-Find people who desperately want what you're selling. The offer matters more than the copy.
-
-### 2. Write to one person
-Use "you" and "I." Date your letters. Use the person's name. Create intimacy.
-
-"Did you know that your family name was recorded with a coat-of-arms in ancient heraldic archives more than seven centuries ago?"
-
-This opened his most successful letter ever (600 million sent).
-
-### 3. Tell stories, not pitches
-The Boron Letters themselves are stories. His ads were stories. Stories disarm skepticism and create emotional connection.
-
-### 4. Handwrite great ads
-Copy successful ads by hand to internalize the rhythm and structure. Don't type. Write.
-
-### 5. Read your copy aloud
-"As you do that, you will hear the words that are lumpy and bumpy, like walking over a stony path. Those need fixing."
-
-### 6. AIDA still works
-Attention → Interest → Desire → Action
-"The simple formulas work because human psychology doesn't change."
-
----
-
-## John Caples: Tested Advertising Methods (1932)
-
-Caples tested obsessively. His data-backed principles:
-
-### The Piano Headline
-"They Laughed When I Sat Down at the Piano... But When I Started to Play!"
-
-Why it worked:
-- It's a STORY in 15 words
-- Universal emotion (being laughed at, then vindicated)
-- Curiosity (what happened next?)
-- Self-selection (anyone who's wanted to learn music relates)
-
-### Caples' headline rules:
-1. Self-interest: Show them what's in it for them
-2. News: Announce something new
-3. Curiosity: But never curiosity alone. Curiosity + benefit.
-4. Positive over negative: "Gain" beats "avoid loss" (usually)
-5. Quick and easy: People want shortcuts
-
-### His most important finding:
-"The headline is 80% of the advertisement."
-
-One headline can outpull another by 19.5x. Same product. Same offer. Different headline = 1,950% difference in response.
-
-### What makes headlines fail:
-- Trying to be clever instead of clear
-- Forgetting self-interest
-- Vague claims instead of specific benefits
-
----
-
-## Joseph Sugarman: The Adweek Copywriting Handbook (1998)
-
-Mail-order master. Sold BluBlockers, calculators, gadgets through long-copy print ads.
-
-### The Slippery Slide
-"Your readers should be so compelled to read your copy that they cannot stop reading until they read all of it as if sliding down a slippery slide."
-
-The job of the headline is to get them to read the first sentence.
-The job of the first sentence is to get them to read the second.
-And so on.
-
-### Every element has one job
-1. Headline: Get attention, draw to subheadline
-2. Subheadline: Give more info, draw into copy
-3. First sentence: Short, easy to read
-4. Body: Slide them down to the CTA
-5. CTA: Tell them exactly what to do
-
-### Seeds of curiosity
-End paragraphs with hooks:
-- "But there's more."
-- "Let me explain."
-- "Here's why this matters."
-- "And that's not all."
-
-These pull readers into the next section.
-
-### 31 psychological triggers
-Sugarman identified 31 triggers that make people buy. The biggest:
-- **Honesty:** "If you're honest in your copy, it shows."
-- **Proof:** Never make claims bigger than your proof.
-- **Specificity:** "$1,237" beats "over $1,000"
-- **Familiarity:** Connect new to familiar concepts
-- **Story:** Humans are wired for narrative
-
-### The buying environment
-Your copy must create the right "buying environment." This includes:
-- Layout and design that feels appropriate
-- Price anchoring
-- Logical flow that answers objections as they arise
-- Ending with clear action
-
----
-
-## Robert Collier: The Robert Collier Letter Book (1937)
-
-Master of mail-order letters. His principles:
-
-### Enter the conversation in their mind
-"Always enter the conversation already taking place in the customer's mind."
-
-You don't create desire. You channel existing desire toward your product.
-
-### The 6 essentials of every letter:
-1. Opening that grabs attention
-2. Description or explanation
-3. Argument for why they should buy
-4. Persuasion to buy NOW
-5. Risk-free offer
-6. Clear call to action
-
-### Visualization
-Make them SEE themselves using the product, enjoying the benefit. Paint the picture vividly.
-
----
-
-## The Meta-Lesson
-
-All the greats agree on these fundamentals:
-
-1. **Know your audience deeply** before writing a word
-2. **Lead with the reader's self-interest**, not your product
-3. **Be specific**, never vague
-4. **Tell stories** to disarm and connect
-5. **Test everything** because your opinion doesn't matter
-6. **The headline does most of the work**
-7. **Write like you talk**, not like you "write"
-8. **Honesty and proof** beat hype every time
-
----
----
-
-# Headline Formulas and Examples
-
-Headlines do 80% of the work. One headline can outpull another by 19.5x. These are the patterns that work.
-
----
-
-## The Master Formula
-
-> **[Action verb] + [Specific outcome] + [Timeframe or contrast]**
-
-Examples:
-- "Ship your startup in days, not weeks"
-- "Build a $10K/month business in 90 days"
-- "Save 4 hours per person every single week"
-- "Write copy that converts in half the time"
-
-The contrast version ("days, not weeks") creates before/after in six words.
-
----
-
-## The Story Headline
-
-John Caples' most famous:
-
-> "They Laughed When I Sat Down at the Piano... But When I Started to Play!"
-
-Why it works:
-- Complete story in 15 words
-- Universal emotion (embarrassment → triumph)
-- Creates curiosity about what happened
-- Self-selects the right reader
-
-**Variations:**
-- "They laughed when I started my cleaning business... but when I quit my day job..."
-- "They grinned when the waiter spoke to me in French... but their laughter changed to amazement at my reply"
-
-**The formula:**
-> "They [doubted/laughed/dismissed] when I [action]... But when I [result]..."
-
----
-
-## The Specificity Headline
-
-Ogilvy's Rolls-Royce:
-
-> "At 60 miles an hour, the loudest noise in this new Rolls-Royce comes from the electric clock."
-
-Why it works:
-- "60 miles" is specific, not "high speed"
-- "Electric clock" is specific, not "interior"
-- Shows don't tells (doesn't say "quiet car")
-- Reader concludes "this must be quiet" themselves
-
-**The formula:**
-> [Specific number/metric] + [Unexpected comparison or detail]
-
-**Modern examples:**
-- "I tested 47 headlines. One pattern beat everything else by 3x."
-- "We analyzed 2.7 million cold emails. Here's what the top 1% do differently."
-- "After 10 years and $45M in sales, I've found exactly 3 things that matter."
-
----
-
-## The How-To Headline
-
-Simple and bulletproof:
-
-> "How to [Achieve desired outcome]"
-
-**Examples:**
-- "How to Win Friends and Influence People"
-- "How to Write Copy That Sells"
-- "How to Make $1,000 in Your First Week"
-
-**Variations:**
-- "How to [outcome] without [common pain]"
-- "How to [outcome] in [timeframe]"
-- "How to [outcome] even if [objection]"
-
-**Examples with variations:**
-- "How to Lose Weight Without Giving Up Your Favorite Foods"
-- "How to Build a 6-Figure Business in 12 Months"
-- "How to Get Clients Even If You're Just Starting Out"
-
----
-
-## The Question Headline
-
-Questions they're already asking themselves:
-
-> "Do You Make These Mistakes in English?"
-
-Legendary ad ran for 40 years. Works because:
-- Reader immediately thinks "what mistakes?"
-- Self-selects (only interested people keep reading)
-- Creates curiosity gap
-
-**The formula:**
-> "Do you [common mistake/struggle]?"
-> "Are you [undesirable state]?"
-> "What if you could [desirable outcome]?"
-
-**Examples:**
-- "Do You Close the Bathroom Door Even When You're the Only One Home?"
-- "Are You Still Trading Time for Money?"
-- "What if Your Next Landing Page Converted at 30%?"
-
----
-
-## The Secret Headline
-
-Implies insider knowledge:
-
-> "The Secret of Making People Like You"
-
-**The formula:**
-> "The Secret of [Desirable outcome]"
-> "The Secret [Industry insiders/experts] Don't Want You to Know"
-> "[Number] Secrets of [Successful group]"
-
-**Examples:**
-- "The Secret of Writing Headlines That Get Clicked"
-- "7 Secrets of Top Copywriters"
-- "The Secret Formula Behind $100M Ads"
-
-**Warning:** Overused. Works best when you actually have something surprising to reveal.
-
----
-
-## The Reason-Why Headline
-
-Hopkins' favorite. Explain WHY:
-
-> "Why Some People Almost Always Make Money in the Stock Market"
-
-**The formula:**
-> "Why [Desirable outcome happens]"
-> "Why [Surprising statement]"
-> "[Number] Reasons Why [Claim]"
-
-**Examples:**
-- "Why Your Ads Aren't Working (And What to Do Instead)"
-- "Why I Switched from [Popular option] to [Your option]"
-- "5 Reasons Why Smart Marketers Are Abandoning Facebook"
-
----
-
-## The Number Headline
-
-Numbers stop the scroll:
-
-> "101 Ways to Save Money on Your Taxes"
-
-**Why numbers work:**
-- Specific = credible
-- Promise clear, bounded value
-- Easy to scan
-
-**The formula:**
-> "[Number] [Ways/Tips/Secrets/Mistakes] to [Outcome]"
-
-**Best numbers:**
-- Odd numbers outperform even (7 beats 6)
-- Specific beats round (37 beats 40)
-- Higher can work for comprehensive guides (101 tips)
-- Lower works for "essentials" (3 things that matter)
-
-**Examples:**
-- "7 Copywriting Mistakes That Kill Conversions"
-- "37 Headline Formulas That Get Clicked"
-- "The 3 Things Every Landing Page Needs"
-
----
-
-## The Warning/Mistake Headline
-
-Fear of loss is powerful:
-
-> "Don't Even Think About Buying a Home Until You Read This"
-
-**The formula:**
-> "Don't [Action] Until [Condition]"
-> "[Number] Mistakes [Audience] Make"
-> "Warning: [Danger statement]"
-
-**Examples:**
-- "Don't Write Another Ad Until You Read This"
-- "5 Mistakes New Copywriters Make (And How to Avoid Them)"
-- "Warning: Your Landing Page Is Losing 73% of Visitors"
-
----
-
-## The Newsjacking Headline
-
-Timely + relevant:
-
-> "What [Current event] Means for [Your audience]"
-
-**The formula:**
-> "[Current event/trend] + [Your angle]"
-> "The [Year] Guide to [Topic]"
-> "[Trend] Is Dead. Here's What's Replacing It."
-
-**Examples:**
-- "What the Google Update Means for Your SEO Strategy"
-- "The 2024 Guide to Cold Email That Actually Works"
-- "Traditional Marketing Is Dead. Here's What's Replacing It."
-
----
-
-## The Transformation Headline
-
-Before → After in one line:
-
-> "From Broke Musician to $100K/Year Music Teacher"
-
-**The formula:**
-> "From [Bad state] to [Good state]"
-> "How I Went from [Before] to [After]"
-> "[Before] → [After]: [How]"
-
-**Examples:**
-- "From Zero to $10K MRR in 6 Months"
-- "How I Went from 0 Followers to 100K in One Year"
-- "Freelancer to Agency Owner: My 3-Year Journey"
-
----
-
-## The Contrarian Headline
-
-Challenge conventional wisdom:
-
-> "Everything You Know About [Topic] Is Wrong"
-
-**The formula:**
-> "[Common belief] Is Wrong. Here's Why."
-> "Stop [Common advice]"
-> "Why [Contrarian position]"
-
-**Examples:**
-- "Stop Trying to Go Viral"
-- "Why I Stopped A/B Testing (And What I Do Instead)"
-- "Everything You Know About SEO Is Wrong"
-
-**Warning:** Must deliver on the promise. Contrarian for contrarian's sake backfires.
-
----
-
-## The Direct Statement Headline
-
-Sometimes simple wins:
-
-> "We're Looking for Writers"
-
-**The formula:**
-> [Direct statement of value or offer]
-
-**Examples:**
-- "Get Better at Copywriting"
-- "Marketing Help for Startups"
-- "Write Faster. Convert More."
-
-Works when your audience is highly aware and just needs the offer.
-
----
-
-## Headline Testing Principles
-
-From John Caples' decades of testing:
-
-1. **Self-interest beats cleverness.** "How to win friends" beats "The science of human relations"
-
-2. **News hooks attention.** "New" "Announcing" "Finally" "Just released"
-
-3. **Curiosity alone fails.** Curiosity + benefit works. Pure curiosity = clickbait that disappoints.
-
-4. **Specifics beat generalities.** "Save $327 on your taxes" beats "Save money on your taxes"
-
-5. **Longer headlines can work.** "At 60 miles an hour, the loudest noise in this new Rolls-Royce comes from the electric clock" is 18 words. It's the best headline Ogilvy ever wrote.
-
-6. **Test at least 5.** Ogilvy wrote 26 headlines for Rolls-Royce. Upworthy writes 25 per article. One will be 2-10x better than the rest.
-
----
-
-## Hall of Fame Headlines
-
-Keep these on file:
-
-- "They Laughed When I Sat Down at the Piano... But When I Started to Play!" (Caples)
-- "Do You Make These Mistakes in English?" (Sherwin Cody)
-- "At 60 miles an hour, the loudest noise in this new Rolls-Royce comes from the electric clock." (Ogilvy)
-- "How to Win Friends and Influence People" (Dale Carnegie)
-- "The Secret of Making People Like You" (Unknown)
-- "Amazing Secret Discovered by 29 Year Old" (Eugene Schwartz)
-- "They Call Me Lucky, But I Invented My Own Luck" (Unknown)
-- "The Lazy Man's Way to Riches" (Joe Karbo)
-- "Lose 10 Pounds in 10 Days" (Diet industry)
-- "Are You Ever Tongue-Tied at a Party?" (Dale Carnegie)
-
----
----
-
-# Opening Lines and Hooks
-
-The first sentence has one job: get them to read the second sentence.
-
----
-
-## The Direct Challenge
-
-Open by challenging what they believe or do:
-
-> "You've been using Claude wrong."
-
-> "Everything you know about pricing is backwards."
-
-> "Most marketing advice is designed to make you feel busy, not successful."
 
-**Why it works:**
-- Stops the scroll
-- Creates tension
-- Self-selects readers who suspect you might be right
+## Reference Material
 
-**The formula:**
-> "You've been [doing X] wrong."
-> "Most [advice/people/companies] [get this wrong]."
-> "[Common belief] is actually [wrong/backwards/dangerous]."
+For deep-dive frameworks, headline formulas, opening line patterns, curiosity gap techniques, flow methods, and modern internet-native examples, read `references/COPYWRITING_PLAYBOOK.md`.
 
----
-
-## The Story Opening
-
-Caples' piano ad doesn't start with product. It starts with scene:
-
-> "Arthur had just played 'The Rosary.' The room rang with applause."
-
-The reader is IN the scene before they know they're reading an ad.
-
-**Modern examples:**
-
-> "I was $78,000 in debt, working 70-hour weeks, and my marriage was falling apart. Then I discovered something that changed everything."
-
-> "Last Tuesday, I opened my laptop and saw a number I couldn't believe: $47,329 in one day."
-
-> "It was 2 AM and I was still coding. The launch was in 6 hours. I had no idea if anyone would show up."
-
-**The formula:**
-> [Specific moment] + [Tension or curiosity] + [Implied transformation]
-
----
-
-## The Confession Opening
-
-Vulnerability disarms skepticism:
-
-> "I'll be honest with you. I almost gave up on this business three times."
-
-> "Here's something embarrassing: I used to think copywriting was about being clever."
-
-> "I made every mistake in the book. Spent $50,000 on ads that didn't work. Launched products nobody wanted."
-
-**Why it works:**
-- Honesty creates trust
-- Reader thinks "they're like me"
-- Sets up the transformation
-
-**The formula:**
-> "I'll be honest..."
-> "Here's something I rarely admit..."
-> "I made every mistake..."
-
----
-
-## The Specific Result Opening
-
-Lead with proof:
-
-> "Last month, this landing page generated $127,394 in sales."
-
-> "In 9 months, we did $400k+ on a vibe-coded website using these exact methods."
-
-> "I've sent 600 million of these letters. Here's what I learned."
-
-**Why it works:**
-- Specific numbers create credibility
-- Reader wants to know how
-- Anchors the transformation to a real result
-
-**The formula:**
-> "[Specific result] + [Implied 'here's how']"
-
----
-
-## The Question Opening
-
-Enter the conversation in their head:
-
-> "Have you ever stared at a blank page, knowing you need to write something that sells... and just froze?"
-
-> "What would you do with an extra 10 hours a week?"
-
-> "Do you ever wonder why some people seem to effortlessly attract clients while you're struggling to get noticed?"
-
-**Why it works:**
-- If the question matches their reality, they're hooked
-- Creates internal "yes" response
-- Self-selects the right reader
-
-**The formula:**
-> "Have you ever [common struggle]?"
-> "Do you ever wonder why [comparison/frustration]?"
-> "What would you do with [desirable outcome]?"
-
----
-
-## The Contrarian Opening
-
-Flip conventional wisdom:
-
-> "Stop writing headlines."
-
-> "The best marketing advice is to do less marketing."
-
-> "I'm going to tell you something nobody else will: your product doesn't matter."
-
-**Why it works:**
-- Pattern interrupt
-- Creates "wait, what?" response
-- Reader has to keep going to understand
-
-**The formula:**
-> "Stop [doing what everyone says to do]."
-> "The best [X] advice is [opposite of expected]."
-> "[Extreme or surprising statement]."
-
-**Warning:** Must pay off. Contrarian opening + conventional content = disappointment.
-
----
-
-## The "Imagine" Opening
-
-Future-pace them into the transformation:
-
-> "Imagine waking up tomorrow and your landing page has already made 3 sales while you slept."
-
-> "Picture this: you open your inbox and see 47 new leads, all from one email you wrote once."
-
-> "Imagine never having to explain your business again because your website does it perfectly."
-
-**Why it works:**
-- Engages visualization
-- Reader experiences the benefit emotionally
-- Creates desire before the pitch
+Load the playbook when:
+- Writing long-form copy (landing pages, sales pages) — load the full playbook
+- Writing headlines — load the Headlines and Opening Lines sections
+- Scoring or reviewing copy — the methodology above is sufficient
+- Quick copy tasks (social posts, short emails) — the methodology above is sufficient
 
-**The formula:**
-> "Imagine [specific desirable scenario]."
-> "Picture this: [vivid future state]."
-
 ---
-
-## The Pattern Interrupt Opening
-
-Break expectations completely:
-
-> "Don't read this."
-
-> "This isn't for you."
-
-> "I'm going to try to talk you OUT of buying this."
-
-**Why it works:**
-- Reverse psychology
-- Creates curiosity
-- Breaks the "sales pitch" pattern
-
-**The formula:**
-> "[Opposite of what they expect from sales copy]"
-
 ---
-
-## The Time-Stamp Opening
-
-Creates immediacy and credibility:
-
-> "It's 4:37 AM and I can't sleep. I keep thinking about what I'm about to share with you."
-
-> "I'm writing this from gate B7 at LAX, 20 minutes before my flight boards."
-
-> "Last Tuesday at exactly 2:14 PM, something happened that changed how I think about marketing."
 
-**Why it works:**
-- Feels personal, not scripted
-- Creates intimacy
-- Reader feels they're getting something fresh
+# Variant Generation Protocol
 
-**The formula:**
-> "[Specific time/place] + [What you're about to share]"
+Great copy is never one-shot. Generate variants for testing.
 
 ---
 
-## The Short-Sentence Opening
+## Headlines: Generate 5-10
 
-Sugarman's approach: first sentence should be stupidly easy to read:
+For every copy project, generate a minimum of 5 headline variants using
+different frameworks from the methodology above:
 
-> "It's simple."
+  ①  The Direct Benefit headline
+     Uses the master formula: [Action verb] + [Specific outcome] + [Timeframe/contrast]
+     Straight value proposition. No cleverness. Maximum clarity.
 
-> "Here's the truth."
+  ②  The Curiosity Gap headline
+     Opens a loop the reader must close. Implies hidden knowledge.
+     Uses specificity to create a credible gap.
 
-> "This works."
+  ③  The Social Proof headline
+     Leads with a number, a name, or a result from someone else.
+     Borrowed credibility. "2,894 makers ship faster with..."
 
-> "Let me explain."
+  ④  The Contrarian headline
+     Challenges conventional wisdom. Creates a "wait, what?" moment.
+     Must be genuinely counterintuitive, not contrarian for its own sake.
 
-**Why it works:**
-- No friction to start reading
-- Creates momentum
-- Reader is into paragraph two before they realize it
+  ⑤  The Story headline
+     Uses Caples' pattern: setup, tension, resolution implied.
+     "They [doubted] when I [action]... But when I [result]..."
 
-**The formula:**
-> [2-4 word sentence that creates curiosity or makes a claim]
+Plus 2-5 additional variants mixing frameworks:
+  - Question + Benefit hybrid
+  - Specificity + Transformation
+  - How-To + Timeframe
+  - Warning/Mistake + Curiosity
+  - News/Newsjacking + Direct Benefit
 
----
+Present as a numbered list. Mark the recommended pick with ★.
 
-## The "Math" Opening
+Always lead with a QUICK PICK summary so the user can grab the top choice immediately:
 
-Quantify the problem or opportunity:
+```
+  QUICK PICK
+  ★ "{Recommended headline}"
+    → Best for: {audience awareness level}
+    → Why: {one-sentence rationale}
 
-> "5 minutes explaining your business + 10 minutes prompting + 15 minutes editing = hours of your week, every week, forever."
+  See all {N} variants below.
+```
 
-> "You're losing $1,847 every month. Here's the math."
+Example output:
 
-> "The average landing page converts at 2.35%. The top 10% convert at 11.45%. That gap? It's not traffic. It's copy."
+```
+Headlines for [Project Name]:
 
-**Why it works:**
-- Makes abstract problems concrete
-- Numbers feel objective/trustworthy
-- Creates clear gap they want to close
+1. Ship your SaaS in a weekend, not a quarter.
+2. I tested 12 launch strategies. One outperformed the rest by 4x.
+3. ★ 2,894 founders launched faster. Here's what they used.
+4. Stop building features. Start shipping products.
+5. "They said I couldn't launch in a week. I launched in 3 days."
+6. How to go from idea to paying customers in 7 days
+7. Warning: Your competitors are shipping while you're still setting up auth.
 
-**The formula:**
-> "[Problem math] = [Painful total]"
-> "The gap between [average] and [top] is [specific difference]."
+Recommended: #3 — combines social proof (2,894 is specific and credible)
+with a curiosity gap (what did they use?). Best for Solution-Aware audiences
+who know they need a tool but haven't picked one yet.
+```
 
 ---
 
-## Opening Lines to Avoid
+## Body Copy: Generate 2-3 Variants
 
-These scream "AI wrote this" or "generic marketing":
+For landing pages and sales pages, generate at least 2 complete body
+copy variants. Each uses the same core methodology but leads from a
+different angle.
 
-- "In today's fast-paced world..."
-- "Are you ready to take your business to the next level?"
-- "Welcome! I'm so glad you're here."
-- "Have you ever wanted to..."
-- "What if I told you..."
-- "The secret they don't want you to know..."
-- "In this article, you'll learn..."
-- "Let's dive in!"
+### Variant A: Control
 
-**The problem:** They're generic. They could be about anything. They don't demonstrate understanding of the reader.
+The strongest version of the primary angle. Plays it straight.
+Uses the most proven framework for the format.
 
----
+- If landing page: follows The Full Sequence (Hook → Problem → Agitate → Credibility → Solution → Proof → Objections → Offer → CTA)
+- If email: Hook → Single value point → CTA
+- If ad: Hook → Benefit → CTA within character limits
 
-## The Meta-Principle
+This is the version you would ship if you could only ship one.
 
-Your opening should do at least one of these:
+### Variant B: Contrarian
 
-1. **Match their mental state** (enter the conversation in their head)
-2. **Create curiosity** (open a loop they need to close)
-3. **Make a bold claim** (backed up later with proof)
-4. **Tell a story** (that they see themselves in)
-5. **Challenge a belief** (that they're not sure about anyway)
+Leads with a counterintuitive or challenging take. Uses the enemy
+or contrarian angle from positioning (if loaded from brand memory).
 
-If your opening does none of these, rewrite it.
+Opens with a pattern interrupt or direct challenge. The body reframes
+the problem in a way the reader has not considered. Same offer, different
+entry point.
 
----
+Best for: Audiences showing skepticism, saturated markets where the
+"straight" version blends in, or when brand voice is edgy/provocative.
 
-# Curiosity Gaps and Open Loops
+### Variant C: Proof-Led
 
-The human brain craves closure. Open a loop, and they'll keep reading to close it.
+Opens with the strongest evidence. No warmup. Testimonial, case study,
+or specific result upfront. The first thing the reader sees is proof
+that this works.
 
----
+Structure:
+1. Lead with the single most compelling proof point
+2. Context: who achieved this, how, timeframe
+3. Bridge to the product/offer
+4. Additional proof stack
+5. CTA
 
-## What Is an Open Loop?
+Best for: Product-Aware or Most-Aware audiences (Schwartz levels 4-5)
+who do not need to be sold on the problem. They need to be sold on
+THIS solution.
 
-An open loop is incomplete information that creates psychological tension. Your brain wants to resolve it.
+### Presentation format
 
-**TV shows use this:** Every episode ends with a cliffhanger. You can't NOT watch the next one.
+Present each variant as a complete piece. After each, include a note:
 
-**In copy:** You tease information without revealing it, pulling readers forward to find the answer.
+```
+--- Variant Notes ---
+Angle: [Control / Contrarian / Proof-Led]
+Best for: [Audience type, awareness level, market condition]
+Tone: [Matches voice profile / adjusted for this angle]
+Recommended test: [What to test this against and why]
+```
 
 ---
-
-## The Curiosity Gap
 
-The gap between what we know and what we want to know.
+## Email Subject Lines: Generate 5-7
 
-**Weak:** "10 Tips for Better Writing"
-**Strong:** "The Ancient Secret Writing Technique That Transformed My Bank Account"
+When writing emails, always generate 5-7 subject line variants:
 
-The weak version tells you exactly what you'll get. No gap.
-The strong version creates questions: What technique? How ancient? How much money?
+1. Direct benefit subject
+2. Curiosity gap subject
+3. Story teaser subject
+4. Question subject
+5. Contrarian subject
+6. (Optional) Personalized subject using audience data
+7. (Optional) Urgency subject (only if authentic)
 
-**The rule:** Clear enough to understand, mysterious enough to provoke questions.
+Mark the recommended pick with ★. Note expected open rate impact.
 
 ---
-
-## Open Loop Techniques
-
-### 1. The Incomplete Story
-
-Start a story, don't finish it:
-
-> "I was $78,000 in debt when I discovered something that changed everything. But before I tell you what it is, you need to understand why most advice about money is wrong..."
-
-The reader now HAS to know what you discovered.
-
-### 2. The Numbered Tease
-
-Promise something specific, delay the reveal:
-
-> "I tested 47 headlines. One pattern beat everything else by 3x. I'll show you exactly what it is in a moment, but first..."
-
-Now they're reading for the one pattern.
-
-### 3. The "But First" Delay
-
-> "The answer might surprise you. But first, let me explain why this matters."
-
-You've promised an answer. They'll stick around for it.
-
-### 4. The Partial Reveal
-
-Give part of the information:
-
-> "The formula has three parts. The first one is obvious. The third one is counterintuitive. But the second one? That's where the magic happens."
-
-Now they need to know the second part.
-
-### 5. The Future Promise
-
-> "In a few minutes, you'll understand exactly why most landing pages fail. And you'll know exactly how to fix yours."
-
-You've told them what they'll get. Now they want it.
-
 ---
-
-## Seeds of Curiosity (Sugarman)
-
-End paragraphs with hooks that pull into the next section:
-
-**Transition phrases:**
-- "But that's not even the best part."
-- "Here's where it gets interesting."
-- "Let me explain why."
-- "And that's when everything changed."
-- "But there's a problem."
-- "What happened next surprised even me."
-- "Which brings me to the real secret."
-- "Now here's the thing..."
-- "But wait. There's more to this story."
 
-**The placement:** Use at the end of paragraphs, especially when transitioning between ideas or before you reveal something important.
+# Copy Scoring Rubric
 
-**Don't overuse:** Every paragraph ending with "but there's more" becomes tiresome. 2-4 per page is plenty.
+When asked to evaluate existing copy OR to self-score generated copy,
+rate on these 7 dimensions (1-10 each).
 
 ---
 
-## The Information Gap Principle
+## The 7 Dimensions
 
-Psychologist George Loewenstein's research:
+| # | Dimension | What It Measures | 10 Looks Like |
+|---|-----------|-----------------|---------------|
+| 1 | Clarity | Can a 12-year-old understand the core message? | Crystal clear in one read. Zero re-reading required. |
+| 2 | Specificity | Real numbers, details, concrete proof? | Every claim has a specific number or example attached. |
+| 3 | Voice | Sounds like a person, not a brand? | Unmistakably human. Distinctive. Could not be anyone else. |
+| 4 | Desire | Does it make them WANT the thing? | Reader feels FOMO by paragraph 2. Visceral pull toward CTA. |
+| 5 | Proof | Is there evidence for every claim? | Specific testimonials, data, case studies. Nothing unsubstantiated. |
+| 6 | Urgency | Is there a reason to act now? | Time-bound offer + clear consequence of inaction. Authentic, not manufactured. |
+| 7 | Flow | Does each line pull to the next? | Impossible to stop reading. Slippery slide from headline to CTA. |
 
-> "Curiosity arises when we're aware of a gap in our knowledge."
-
-To create curiosity:
-1. Make them aware there's something they don't know
-2. Make them want to know it
-3. Delay the answer just long enough
-
-**Example:**
-
-> "Most copywriters make this mistake. It's costing them thousands of dollars in lost conversions. And they have no idea."
-
-You've created three gaps:
-- What mistake?
-- How much is it costing them?
-- Why don't they know?
-
-Now they'll read to close all three.
-
 ---
-
-## Curiosity in Headlines
 
-**Weak (no gap):** "How to Write Better Headlines"
-**Strong (gap):** "Why Your Headlines Aren't Working (And the 2-Minute Fix)"
+## Score Format
 
-**Weak:** "5 Ways to Improve Your Landing Page"
-**Strong:** "I Analyzed 1,000 Landing Pages. One Element Predicted Conversion Rate Better Than Anything Else."
+Present scores in this format:
 
-The strong versions create specific questions the reader needs answered.
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
----
+  COPY SCORECARD
 
-## Open Loops in Email Subject Lines
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-**Open loop:** "The $50,000 mistake I made last year"
-- What mistake? You have to open to find out.
+  Clarity:      8/10   "Clear on the offer, vague on the mechanism"
+  Specificity:  6/10   "Uses 'many customers' instead of actual numbers"
+  Voice:        7/10   "Conversational but could be any SaaS brand"
+  Desire:       5/10   "Lists benefits but doesn't make them visceral"
+  Proof:        4/10   "One testimonial, no data, no case study"
+  Urgency:      3/10   "No reason to act now vs next month"
+  Flow:         7/10   "Good transitions, but paragraph 3 is a wall of text"
 
-**Open loop:** "This one change added 247 subscribers in a week"
-- What change? Open to find out.
+  ────────────────────────────────────────────────
+  TOTAL:       40/70   (57%)
 
-**Open loop:** "Don't make this launch mistake (I almost did)"
-- What mistake? What happened? Open.
+  Verdict: Needs rewrite. Below 70% threshold.
 
-**Too vague (bad):** "Quick question"
-- No specific gap. Could be anything.
+  Priority fixes:
+  1. Add 2-3 specific testimonials with numbers (Proof: 4 → 7)
+  2. Quantify the pain -- do the math for them (Desire: 5 → 8)
+  3. Add authentic urgency (limited spots, price increase) (Urgency: 3 → 6)
 
-**Too complete (bad):** "5 tips for writing better emails"
-- No gap. You already know what it is.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
 
 ---
-
-## Closing Loops
-
-**Critical:** You must close the loops you open.
 
-If you tease "the one thing that changed everything" and never deliver, readers feel cheated. They won't trust you again.
+## Scoring Thresholds
 
-**The timing:**
-- Small loops: close within 1-3 paragraphs
-- Medium loops: close within the section
-- Big loops: close by the end of the piece
+| Range | Percentage | Verdict |
+|-------|-----------|---------|
+| 63-70 | 90-100% | Exceptional. Ship it. Minor polish only. |
+| 56-62 | 80-89% | Strong. Ship with small tweaks noted. |
+| 49-55 | 70-79% | Passing. Functional but leaving performance on the table. |
+| 42-48 | 60-69% | Weak. Rewrite priority areas before shipping. |
+| Below 42 | Below 60% | Needs full rewrite. Core issues in multiple dimensions. |
 
-**The payoff must be worth the wait.** If you create huge curiosity and deliver mediocre content, you've damaged trust.
-
 ---
-
-## Multiple Loops
-
-You can stack loops, but manage them carefully:
-
-**Opening:**
-> "I'm going to share three things with you today.
->
-> The first is obvious. You probably already know it.
-> The second is counterintuitive. It goes against everything you've been told.
-> The third? It's the one that will change how you think about marketing forever.
->
-> Let's start with the obvious one..."
 
-Now they're reading for all three, but especially the third.
+## When to Score
 
-**Close each one before opening too many more.** 3-4 open loops at once is manageable. More than that creates confusion.
+- **Before rewriting:** Score existing copy first. Show the user what is weak and why.
+  This builds trust and makes the rewrite feel justified.
+- **After generating:** Optionally self-score generated copy. Be honest.
+  If a dimension scores below 7, note what would improve it and offer to revise.
+- **On request:** When user says "score this" or "rate this copy" or "how good is this."
 
 ---
-
-## The "But Wait" Technique
-
-Classic late-night TV, but works in copy:
-
-> "You get the complete training program, all 12 modules, the workbook, and the template library.
->
-> But that's not all.
->
-> When you join today, you also get..."
-
-The "but that's not all" creates a micro-loop. They need to see what else.
-
 ---
-
-## Curiosity Killers
-
-What NOT to do:
 
-**Being too vague:**
-> "Something amazing happened..."
+# A/B Testing Suggestions
 
-Too generic. No specific gap.
+After generating copy, suggest 3-5 specific tests to optimize performance.
 
-**Being too complete:**
-> "I made $50,000 by selling an online course about productivity."
-
-No gap left. You answered everything.
-
-**Creating gaps you don't close:**
-> "The secret I'm about to share will change everything..."
-> [Never actually shares the secret]
-
-This is manipulation. It destroys trust.
-
-**Clickbait:**
-> "You won't BELIEVE what happened next!"
-
-Creates gap but signals low-quality content. Sophisticated readers bounce.
-
 ---
-
-## The Meta-Principle
 
-Curiosity is about **information asymmetry**.
+## Test Suggestion Format
 
-You know something they want to know. Your job is to:
-1. Make them aware of the gap
-2. Make the answer seem valuable
-3. Deliver on the promise
+For each test, provide:
 
-Do this ethically, and you'll hold attention through any length of copy.
+```
+  Test [N]: [Element] — [Version A] vs [Version B]
+  Why:     [Hypothesis based on copywriting principles from methodology]
+  Metric:  [Which metric this targets: CTR, conversion, engagement, etc.]
+  Impact:  [Expected direction and magnitude]
+  Priority: [HIGH / MEDIUM / LOW] — [Reasoning]
+```
 
 ---
----
-
-# Flow Techniques: The Slippery Slide
-
-How to keep readers moving from headline to CTA without friction.
-
----
-
-## The Slippery Slide Concept
-
-Joseph Sugarman:
 
-> "Your readers should be so compelled to read your copy that they cannot stop reading until they read all of it as if sliding down a slippery slide."
+## What to Test (Priority Order)
 
-Once they start, they can't stop. Every element has one job: get them to read the next element.
+### HIGH priority (test these first)
 
-- Headline → gets them to read the subheadline
-- Subheadline → gets them into the first sentence
-- First sentence → gets them to the second
-- Each paragraph → pulls them to the next
-- Everything → slides them toward the CTA
+**1. Headlines**
+The headline is 80% of the work (Caples). One headline can outpull another
+by 19.5x. Always test headline first.
 
----
+Typical test: Direct Benefit vs Story vs Curiosity Gap
+Expected impact: +15-50% CTR difference between best and worst
 
-## The Bucket Brigade
+**2. Opening line / Hook**
+The first sentence determines whether they read the rest.
+Typical test: Story opening vs Direct challenge vs Specific result
+Expected impact: +10-30% scroll depth
 
-A chain of short phrases that smooth transitions between paragraphs:
+**3. CTA copy and placement**
+Benefit-oriented vs command. Above fold vs below proof.
+Typical test: "Get ShipFast" vs "Start building today"
+Expected impact: +5-20% click-through on CTA
 
-**Common bucket brigade phrases:**
+### MEDIUM priority
 
-- And
-- So
-- Now
-- But
-- Look
-- Also
-- First
-- Listen
-- By now
-- You see
-- Truth is
-- Turns out
-- Of course
-- In fact
-- Here's why
-- Here's the thing
-- Think about it
-- Bottom line
-- The result?
-- What does this mean?
+**4. Proof structure**
+Lead with testimonial vs lead with data vs lead with founder story.
+Expected impact: +5-15% conversion rate
 
-**How they work:**
+**5. Length**
+Short (500 words) vs long (2000 words) for landing pages.
+Depends on awareness level. Less aware = longer copy needed.
+Expected impact: +5-25% conversion (varies by audience)
 
-Without bucket brigade:
-> "Most landing pages fail because they focus on features, not benefits.
->
-> Benefits are what the customer actually cares about."
+### LOW priority (optimize after the above)
 
-With bucket brigade:
-> "Most landing pages fail because they focus on features, not benefits.
->
-> Here's the thing: Benefits are what the customer actually cares about."
+**6. Body copy angle**
+Control vs Contrarian vs Proof-Led (the 3 variants above).
+Expected impact: +3-10% conversion, but learnings are high-value
 
-The "Here's the thing" smooths the entry into the second paragraph. The reader doesn't pause between ideas.
+**7. Friction reducer copy**
+Test different risk reversals, social proof numbers, speed claims.
+Expected impact: +2-8% CTA clicks
 
 ---
 
-## Seeds of Curiosity
+## Example Test Suggestions
 
-Sugarman's technique for ending paragraphs:
+```
+After generating landing page copy for [Product]:
 
-Instead of ending paragraphs flatly, end with a hook:
+  Test 1: Headline — Story vs Direct Benefit
+  Why:     Your audience shows skepticism (competitors over-promise).
+           Story may build trust faster than straight benefit claim.
+  Metric:  CTR from ad → landing page, and scroll depth
+  Impact:  +15-30% CTR if story resonates with skeptical audience
+  Priority: HIGH — headline is 80% of the work
 
-**Without seed:**
-> "This is the first principle of good headlines."
+  Test 2: Opening — Pain quantification vs Founder story
+  Why:     Two strongest hooks for Solution-Aware audiences.
+           Math makes it rational; story makes it emotional.
+  Metric:  Scroll depth past fold, time on page
+  Impact:  +10-20% engagement
+  Priority: HIGH — determines if they read past the first screen
 
-**With seed:**
-> "This is the first principle of good headlines. But the second principle is where most people fail."
+  Test 3: CTA — "Start building" vs "See what's inside"
+  Why:     First is action-oriented (confident buyers). Second is
+           curiosity-oriented (researchers still evaluating).
+  Metric:  CTA click rate
+  Impact:  +5-15% clicks
+  Priority: MEDIUM — meaningful but smaller than headline/hook
 
-The reader HAS to continue to find out the second principle.
+  Test 4: Social proof — Testimonial-first vs Data-first
+  Why:     Testimonials create emotional proof. Data creates
+           rational proof. Test which your audience responds to.
+  Metric:  Conversion rate (sign-up or purchase)
+  Impact:  +5-12% conversion
+  Priority: MEDIUM — refines an already-working page
 
-**Seed phrases:**
-- "But there's more."
-- "Let me explain."
-- "And that's not all."
-- "Here's why that matters."
-- "Which brings me to..."
-- "Now comes the interesting part."
-- "But that's not even the best part."
+  Test 5: Body length — 800 words vs 1,500 words
+  Why:     Your audience is Solution-Aware (level 3). They need
+           enough to differentiate but not a full education.
+  Metric:  Conversion rate, bounce rate
+  Impact:  +5-20% conversion
+  Priority: LOW — test after headline and hook are optimized
+```
 
-**Placement:**
-- At the end of subheads
-- When switching between ideas
-- Before slow sections (to maintain momentum)
-- Early in the copy to build momentum
-
 ---
-
-## The Stutter Technique
-
-Repeat a word from the last sentence in the first sentence of the next paragraph:
-
-> "Now we're going to look at a more sophisticated technique.
->
-> A technique used by professional writers, but often overlooked by copywriters."
-
-The word "technique" bridges the gap. Smoother than starting fresh.
-
-**Another example:**
-
-> "The key is specificity. Vague claims don't convert.
->
-> Specificity signals honesty. When you say '$47,329 in one day,' that's believable. When you say 'lots of money,' it's not."
-
-"Specificity" carries from one paragraph to the next.
-
 ---
-
-## Know Your ABCs
-
-Logical flow. Point A leads to Point B leads to Point C.
-
-**Broken flow:**
-> "Energy prices are rising.
->
-> You should invest in cryptocurrency."
-
-Wait, what? How did we get from energy to crypto? The reader's brain stumbles.
 
-**Fixed flow:**
-> "Energy prices are rising.
->
-> In fact, prices are rising everywhere. Inflation is eating into your savings.
->
-> To beat inflation, your money needs to grow faster than 8% per year.
->
-> Traditional savings accounts pay less than 1%.
->
-> That's why more people are looking at alternative investments like cryptocurrency."
+# File Output Protocol
 
-Each point connects to the next. The reader slides from energy prices to crypto without friction.
+Write completed copy to the campaign directory structure.
 
 ---
 
-## The Language of Logic
+## Directory Structure
 
-Transition words that signal logical connections:
+```
+./campaigns/{campaign-name}/
+├── landing-page.md
+├── sales-page.md
+├── emails/
+│   ├── welcome-sequence-1.md
+│   ├── welcome-sequence-2.md
+│   └── {subject-slug}.md
+├── ads/
+│   ├── meta-benefit-v1.md
+│   ├── meta-story-v1.md
+│   ├── google-responsive-v1.md
+│   └── {platform}-{variant}.md
+└── social/
+    ├── linkedin-launch-post.md
+    ├── twitter-thread-v1.md
+    └── {platform}-{description}.md
+```
 
-**Cause and effect:**
-- Therefore
-- As a result
-- Because of this
-- This is why
-- That's why
-
-**Contrast:**
-- But
-- However
-- On the other hand
-- Yet
-- Despite this
-
-**Addition:**
-- Also
-- Moreover
-- Furthermore
-- What's more
-- Not only that
-
-**Example:**
-- For instance
-- For example
-- Consider this
-- Take [X]
-
-**Emphasis:**
-- In fact
-- Indeed
-- The truth is
-- Actually
-- Really
-
-These signal to the reader's brain how this paragraph relates to the last one.
-
 ---
-
-## Short First Sentences
 
-Sugarman's rule: The first sentence should be short and easy to read.
+## File Naming
 
-**Long first sentence:**
-> "When you think about all the different ways that marketing has changed over the past decade, it's remarkable how many new channels have emerged."
+| Format | Naming Pattern | Example |
+|--------|---------------|---------|
+| Landing page | `landing-page.md` | `landing-page.md` |
+| Sales page | `sales-page.md` | `sales-page.md` |
+| Email | `emails/{subject-slug}.md` | `emails/welcome-to-the-crew.md` |
+| Ad copy | `ads/{platform}-{variant}.md` | `ads/meta-benefit-v1.md` |
+| Social post | `social/{platform}-{description}.md` | `social/linkedin-launch-post.md` |
 
-Heavy. Requires commitment to start.
-
-**Short first sentence:**
-> "Marketing has changed."
-
-Easy. You're already reading. Now you'll read the next sentence.
-
-**More short openers:**
-- "Here's the problem."
-- "It's simple."
-- "This works."
-- "Let me explain."
-- "Consider this."
-- "I was wrong."
-
 ---
-
-## Paragraph Length Variation
-
-Same-length paragraphs = monotonous reading
-
-Vary them:
 
-Short.
+## File Frontmatter
 
-Then a medium paragraph that expands on the idea with a bit more detail and context.
+Every copy file includes frontmatter:
 
-Then maybe a longer one when you need to explain something more complex, build an argument with multiple points, or tell a story that requires setup, conflict, and resolution. These longer paragraphs have their place.
-
-Then short again.
-
-This creates rhythm. The eye moves easily. The brain doesn't fatigue.
-
+```yaml
 ---
-
-## The Question Bridge
-
-Questions pull readers forward:
-
-> "So what does this mean for your landing page?"
->
-> "It means you need to focus on benefits, not features."
-
-The question creates a micro-gap. The answer closes it. Reader momentum continues.
-
-**Use sparingly:** Too many questions feels like an interrogation.
-
+type: [landing-page | sales-page | email | ad | social]
+campaign: {campaign-name}
+target_audience: [from brand memory or stated by user]
+positioning_angle: [from brand memory or stated by user]
+awareness_level: [unaware | problem-aware | solution-aware | product-aware | most-aware]
+variant: [control | contrarian | proof-led | (custom label)]
+platform: [web | meta | google | linkedin | tiktok | twitter | instagram]
+word_count: [number]
+date: [YYYY-MM-DD]
+status: draft
+score: [total/70 if scored]
 ---
-
-## The "Rule of One"
-
-Mark Ford's principle: Each paragraph should make ONE point.
-
-If you're making two points, you need two paragraphs.
-
-**Muddled:**
-> "Headlines are important and you should always test them, plus make sure to use specific numbers because specificity builds credibility and don't forget to match the headline to your audience's awareness level."
-
-**Clear:**
-> "Headlines do 80% of the work.
->
-> Always test at least 5. One will outperform the others by 2-10x.
->
-> Use specific numbers. '$47,329' beats 'lots of money.'
->
-> Match your headline to your audience's awareness level."
+```
 
-One point per paragraph. Easy to follow. Easy to remember.
-
 ---
 
-## Momentum Killers
+## After Writing
 
-Things that stop the slide:
+1. **Save the file(s)** to the campaign directory.
+2. **Update `./brand/assets.md`** with the new asset entry:
+   ```
+   ## [Date] — [Campaign Name]
+   - [Type]: ./campaigns/{name}/{filename}.md ([word count] words, [variant])
+   ```
+3. **Report what was saved** in the output (see Output Formatting below).
 
-- **Jargon** they have to pause to understand
-- **Long paragraphs** with no breaks
-- **Tangents** that don't connect to the main thread
-- **Weak transitions** that jar the reader
-- **Same sentence structure** repeated too many times
-- **All short sentences** (choppy)
-- **All long sentences** (exhausting)
-- **Unanswered questions** left hanging
-- **Excessive hedging** ("It might possibly help some people in certain situations")
-
 ---
-
-## The Meta-Principle
-
-Every element should either:
-
-1. **Pull them forward** (curiosity, promise of value)
-2. **Push them forward** (bucket brigades, transitions)
-3. **Slide them forward** (easy reading, momentum)
-
-If any element does none of these, it's friction. Cut it or fix it.
-
 ---
 
-# Modern Internet-Native Copy Examples
+# Output Formatting
 
-How the classics translate to landing pages, tweets, and creator brands.
+Follow `_system/output-format.md` -- all 4 required sections.
 
 ---
 
-## Founder Story Examples
+## Section 1: Header
 
-### Marc Lou (ShipFast)
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-> "Hey, it's Marc 👋
->
-> In 2018, I believed I was Mark Zuckerberg, built a startup for 1 year, and got 0 users...
->
-> A few years after my burnout, I restarted the journey differently: I shipped like a madman—16 startups in 2 years.
->
-> Now I'm happy and earn $45,000 a month."
+  DIRECT RESPONSE COPY
+  Generated [Month Day, Year]
 
-**Why it works:**
-- Self-deprecating ("I believed I was Mark Zuckerberg")
-- Specific failure (0 users)
-- Specific success ($45,000/month, 16 startups in 2 years)
-- Vulnerability → credibility → shared journey
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
 
-### Codie Sanchez (Contrarian Thinking)
-
-> "After nearly two decades on Wall Street, I realized the real path to wealth is in unsexy businesses—laundromats, car washes, HVAC."
-
-**Why it works:**
-- Credibility (Wall Street)
-- Contrarian insight (unsexy > sexy)
-- Specific examples (laundromats, car washes, HVAC)
-
 ---
 
-## Pain Quantification Examples
+## Section 2: Content
 
-### ShipFast
+The copy itself, beautifully formatted. Structure depends on format:
 
-> "4 hrs to set up emails + 6 hrs designing a landing page + 4 hrs to handle Stripe webhooks + 2 hrs for SEO tags + 1 hr applying for Google OAuth + 3 hrs for DNS records + 2 hrs for protected API routes + ∞ hrs overthinking...
->
-> = 22+ hours of headaches.
->
-> There's an easier way."
+**Landing page / Sales page:**
+Present the full copy in reading order. Use section dividers between
+major sections (hero, problem, solution, proof, CTA).
 
-**Why it works:**
-- Makes vague problem (launching is hard) concrete (22+ hours)
-- Lists specific micro-tasks they recognize
-- Reader can calculate: "Is this worth $199 to skip?"
+**Email:**
+Present subject line, preview text, then body.
 
-### Superhuman
+**Ad copy:**
+Present per-platform with character counts noted.
 
-> "Imagine the scene: you and your team get an urgent email, so you rapidly reply. But just after you hit send, your team replies as well. In the best case, you look disorganized. In the worst case, you contradict each other."
+**Headlines / Variants:**
+Present as numbered list with ★ recommendation.
 
-**Why it works:**
-- Vivid scenario they've experienced
-- Paints the emotional pain (embarrassment)
-- Makes abstract problem (email chaos) tangible
+**Copy Scorecard:**
+Present the scoring rubric output (see Scoring section above).
 
 ---
-
-## Specific Outcome Testimonials
-
-**Formula:** [Before state] + [Action] + [Specific outcome] + [Timeframe] + [Emotion]
-
-### ShipFast testimonials:
-
-> "I shipped in 6 days as a noob coder. It would have taken me months. I wanna cry 🥲"
 
-> "I made more in 6 days than minimum wage in Spain."
+## Section 3: Files Saved
 
-> "I managed to exit & sell for 5 figures in a few weeks. Best investment I've made in so long."
+```
+──────────────────────────────────────────────────
+  Files saved
+──────────────────────────────────────────────────
 
-### Contrarian Thinking:
+  ✓ ./campaigns/{name}/landing-page.md
+  ✓ ./brand/assets.md (updated)
+```
 
-> "We were able to buy our first business within 4 months of joining."
-
-**Why they work:**
-- Specific timeframes (6 days, 4 months)
-- Specific outcomes (5 figures, bought a business)
-- Emotional language (wanna cry, best investment)
-- NOT: "Great product! Highly recommend."
-
 ---
-
-## Disqualification Examples
 
-### Justin Welsh
+## Section 4: What's Next
 
-> "You're a good fit for this if:
-> ✅ You know this is a tool, and you'll need to use it
-> ✅ You're willing to reassess your existing ideas
->
-> You're NOT a good fit if:
-> ❌ You equate success with just buying a course
-> ❌ You're not willing to do the unsexy work required"
+Suggest logical follow-up skills:
 
-### FAQ objection handling:
-
-> "Couldn't I just do this myself with all the free content out there?"
->
-> "If you could, you would have already. 🤷🏻"
-
-**Why it works:**
-- Flips from "please buy" to "prove you're worthy"
-- Creates velvet rope effect
-- Pre-filters bad customers
-- The FAQ response is short, honest, slightly challenging
-
----
+```
+──────────────────────────────────────────────────
+  What's next
+──────────────────────────────────────────────────
 
-## Benefit-Oriented CTAs
+  Your copy is saved. Before moving on:
 
-**Weak (command action):**
-- Sign Up
-- Learn More
-- Buy Now
-- Subscribe
+  → /creative            Build this — landing page,
+                         ad creative, or visual
+                         assets (~15 min)
+  → "Skip visuals"       Continue to distribution ↓
 
-**Strong (describe benefit):**
-- Get ShipFast
-- Start building
-- Enter your new home
-- See the exact template I used
-- Send me the first lesson free
+  ──────────────────────────────────────────────
 
-**Below-CTA friction reducers:**
-> "$199 once. Join 2,600+ marketers. 2 minutes to install."
+  → /email-sequences     Build a nurture sequence
+                         around this page (~15 min)
+  → /content-atomizer    Break into social posts,
+                         email snippets, ad hooks (~10 min)
+  → /lead-magnet         Create a lead magnet for the
+                         top of this funnel (~10 min)
+  → /keyword-research    Find search terms to drive
+                         organic traffic here (~15 min)
+```
 
-**Formula:** [Risk reversal] + [Social proof] + [Speed/ease]
+Tailor suggestions to what was just created:
+- After landing page → suggest email sequences, content atomizer, creative
+- After email → suggest A/B test the subject lines, write landing page if none exists
+- After ad copy → suggest landing page if none exists, creative for ad visuals
+- After social post → suggest content atomizer for more formats, email to capture leads
 
 ---
-
-## Revenue Transparency
-
-Internet-native voice marker. Creates trust through specific vulnerability:
-
-> "Now I'm happy and earn $45,000 a month."
-
-> "$65K MRR" in bio
-
-> "The Vibe Marketing community did $400k+ in 9 months."
-
-**Why it works:**
-- Specific numbers corporate would never share
-- Proves claims with real data
-- Creates aspirational but believable target
-
 ---
 
-## Honest Limitations
+# Feedback Collection
 
-Another trust marker:
+After delivering copy, collect feedback to improve future output.
 
-> "One note: 3D model generation isn't great yet."
-
-> "This isn't for complete beginners. You need basic coding knowledge."
-
-> "Fair warning: setup takes about 30 minutes the first time."
-
-**Why it works:**
-- Honesty about imperfection builds credibility
-- Shows you're not hiding anything
-- Makes other claims more believable
-
 ---
-
-## Strategic Emoji Use
-
-Internet-native, not professional-sanitized:
-
-> "I wanna cry 🥲"
 
-> "If you could, you would have already 🤷🏻"
+## Standard Feedback Prompt
 
-> "Hey, it's Marc 👋"
+After presenting the copy and files-saved summary, ask:
 
-**Rules:**
-- Sparingly (1-2 per page, not every sentence)
-- To add emotional tone
-- Where a human would naturally use them
-- NOT: 🎉🚀💪 LAUNCH YOUR BUSINESS TODAY! 🔥💯
+```
+──────────────────────────────────────────────────
+  Feedback
+──────────────────────────────────────────────────
 
----
-
-## In-Group Language
-
-Signals "I'm one of you":
+  Before I close out, two quick questions:
 
-- "Ship like a madman"
-- "Indie hacker" / "solopreneur"
-- "Vibe-coded"
-- "MRR" (Monthly Recurring Revenue)
-- "GTM" (Go to Market)
+  1. Does this sound like you / your brand?
+     (If not, what feels off? I'll adjust.)
 
-**Why it works:**
-- Creates belonging
-- Filters for the right audience
-- Builds instant rapport with insiders
+  2. Which variant or headline direction resonates most?
+     (I'll note this in your brand learnings for next time.)
+```
 
 ---
 
-## Before/After Contrast Headlines
+## Recording Feedback
 
-### Modern examples:
+If the user provides feedback:
 
-> "Ship your startup in days, not weeks."
+1. **Voice adjustments** → Note in `./brand/voice-profile.md` under a "Copy Feedback" section (append, do not overwrite the profile).
+2. **Angle/variant preferences** → Note in `./brand/learnings.md`:
+   ```
+   ## [Date] — Copy preference
+   - Preferred [variant type] over [other variant type]
+   - Reason: [user's stated reason or inferred reason]
+   - Context: [what was being written]
+   ```
+3. **Specific edits** → Apply immediately and re-save the file.
 
-> "From idea to launch in one weekend."
+This feedback accumulates over time, making each subsequent copy generation
+better tuned to the brand.
 
-> "Stop building for months. Start shipping in days."
-
-**The structure:**
-> [Before: slow/painful] → [After: fast/easy]
-
-In six words, you've painted transformation.
-
 ---
-
-## The Modern Sales Page Flow
-
-Based on analysis of ShipFast, Superhuman, Contrarian Thinking:
-
-1. **Outcome headline** with specific number or timeframe
-2. **Problem section** with quantified pain
-3. **Agitate** with scenario they recognize
-4. **Credibility** through founder story or proof numbers
-5. **Solution** framed as transformation, not features
-6. **Social proof** with specific-outcome testimonials
-7. **FAQ / Fit section** with disqualification
-8. **Offer** with price justification
-9. **Final CTA** with friction reducers
-
-Not every page uses all nine. But this is the complete playbook.
-
 ---
-
-## Voice Markers Summary
 
-**Signals "internet-native, not corporate":**
+# Appendix: Quick-Reference Checklists
 
-| Corporate | Internet-native |
-|-----------|-----------------|
-| "Significant revenue" | "$45,000/month" |
-| "Many satisfied customers" | "2,894 makers" |
-| "Get started today" | "Start building" |
-| No limitations mentioned | "3D generation isn't great yet" |
-| Stock photo testimonials | "I wanna cry 🥲" |
-| "We at [Company]..." | "Hey, it's Marc 👋" |
-| Formal language | "Ship like a madman" |
-| Rounded numbers | "$47,329" (specific) |
-
----
+## Pre-Generation Checklist
 
-## The Meta-Lesson
+Before writing any copy, confirm:
 
-Modern internet-native copy is classic direct response + authenticity markers.
+- [ ] Format established (landing page, email, ad, social, sales page, other)
+- [ ] Brand memory loaded (or noted as absent)
+- [ ] Audience awareness level identified (Schwartz 1-5)
+- [ ] Core transformation identified (not features -- the "so what?" chain result)
+- [ ] Proof inventory taken (testimonials, data, case studies available)
+- [ ] Positioning angle clear (from brand memory or stated)
 
-The principles haven't changed since Hopkins:
-- Specific beats vague
-- Benefits beat features
-- Stories beat pitches
-- Proof beats claims
+## Post-Generation Checklist
 
-What's different:
-- Personal voice over corporate voice
-- Revenue transparency
-- Honest limitations
-- Emoji and in-group language
-- Shorter attention spans = tighter copy
-- Mobile-first formatting
+Before delivering copy, verify:
 
-The fundamentals are 100 years old. The packaging is 2024.
+- [ ] Read it out loud -- does it sound human?
+- [ ] Every claim has a specific number or proof point
+- [ ] Rhythm alternates (short punchy + longer breathing room)
+- [ ] Open loops are all closed
+- [ ] CTA is benefit-oriented with friction reducers
+- [ ] No AI tells (check the avoid list)
+- [ ] Voice matches brand profile (if loaded)
+- [ ] Headlines: minimum 5 variants generated
+- [ ] Body: minimum 2 variants for landing/sales pages
+- [ ] Files saved to correct campaign directory
+- [ ] assets.md updated

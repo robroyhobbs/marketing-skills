@@ -1,404 +1,284 @@
-# AI Marketing & Creative Suite
+# Vibe Marketing Skills v2.0
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub stars](https://img.shields.io/github/stars/robroyhobbs/marketing-skills?style=social)](https://github.com/robroyhobbs/marketing-skills/stargazers)
+Your marketing team in a terminal. 11 skills that build on each other,
+remember your brand, and get sharper every time you use them.
 
-**Your complete marketing and creative team in Claude Code**
-
-This repository contains two professional-grade plugins that give you a complete marketing and creative production system.
-
-> Built for [AIGNE CLI](https://www.aigne.io/framework) - [Claude Code](https://claude.com/code) - AI-powered CLI tools from AIGNE and Anthropic
-
-## 📦 What's Included
-
-### 🎯 Marketing Suite
-**Your Marketing Team**
-- 14 specialized marketing skills (v1.2: +credit-campaign-builder, +nightly-build-narrator)
-- 3 workflow commands
-- 3 strategic agents
-- Utility scripts for tracking and exporting
-
-[View Marketing Suite Details →](marketing-suite/README.md)
-
-### 🎨 Creative Suite
-**Your Creative Team**
-- 6 AI-powered creative skills
-- Strategic creative direction
-- Image, video, and social graphics generation
-
-[View Creative Suite Details →](creative-suite/README.md)
+Built for Claude Code. Designed for founders, solo marketers, and small
+teams who need senior-level marketing output without the senior-level
+headcount.
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
-### Installation
-
-```bash
-# 1. Add the marketplace from GitHub
-/plugin marketplace add github:robroyhobbs/marketing-skills
-
-# 2. Install both plugins
-/plugin install marketing-suite@marketing-skills
-/plugin install creative-suite@marketing-skills
-
-# 3. Verify installation
-/help
+```
+/start-here
 ```
 
-You should see all the skills and commands available!
-
-### First Time User?
-
-**Not sure where to start?**
-
-```bash
-/orchestrator
-```
-
-Tell it what you're trying to achieve. It'll recommend exactly what to do.
-
-**Read the guides:**
-- **[USER-GUIDE.md](USER-GUIDE.md)** - Complete non-technical guide with real examples
-- **[QUICK-START.md](QUICK-START.md)** - Quick reference cheat sheet
+That is the only command you need to remember. The orchestrator scans your
+project, asks two questions, builds your brand foundation, and routes you
+to the right skill for whatever you are working on.
 
 ---
 
-## 🎯 Common Use Cases
+## What Is in the Package
 
-### Launching a Product
+### Foundation Skills
 
-```bash
-/marketing-suite:launch
-```
+| Skill | What it does |
+|-------|-------------|
+| `/start-here` | Scans your project, builds your brand foundation, routes you to the right skill |
+| `/brand-voice` | Extracts or builds a voice profile so every piece of content sounds like you |
+| `/positioning-angles` | Finds the market angle that makes your offer stand out and sell |
 
-Creates your complete launch plan with timeline and assets.
+### Strategy Skills
 
-**Then execute with:**
-- `/positioning-angles` - Find your launch angle
-- `/ai-creative-strategist` - Visual direction
-- `/direct-response-copy` - Landing page copy
-- `/ai-product-photo` - Product visuals
-- `/email-sequences` - Launch emails
-- `/content-atomizer` - Social distribution
+| Skill | What it does |
+|-------|-------------|
+| `/keyword-research` | Maps your content territory with data-backed keyword clusters and priorities |
+| `/lead-magnet` | Generates lead magnet concepts and builds the actual content (checklists, guides, templates) |
 
-**Time:** 2-4 weeks | **Result:** Complete launch campaign
+### Execution Skills
 
----
+| Skill | What it does |
+|-------|-------------|
+| `/direct-response-copy` | Writes landing pages, sales copy, headlines, and CTAs that convert |
+| `/seo-content` | Produces long-form articles optimized for search that read like a human wrote them |
+| `/email-sequences` | Builds welcome, nurture, launch, and re-engagement email sequences |
+| `/newsletter` | Creates newsletter editions and format templates modeled on top creators |
+| `/creative` | AI-powered image, video, and graphic generation across five production modes |
 
-### Building a Lead Generation System
+### Distribution Skills
 
-```bash
-/marketing-suite:leads
-```
+| Skill | What it does |
+|-------|-------------|
+| `/content-atomizer` | Repurposes one piece of content into platform-optimized posts across 8 platforms |
 
-Builds your email list and conversion funnel.
+### Creative Engine Modes
 
-**Includes:**
-- `/lead-magnet` - Create opt-in offer
-- `/direct-response-copy` - Opt-in page
-- `/email-sequences` - Welcome sequence
-- `/seo-content` - Traffic content
-- `/content-atomizer` - Social promotion
+The `/creative` skill includes five specialized production modes:
 
-**Time:** 1-2 weeks | **Result:** Automated lead gen system
-
----
-
-### Creating Social Media Content
-
-**Product-shaped marketing (NEW):**
-```bash
-/viral-artifact-generator    # Turn product usage into shareable proof
-/founder-led-social          # Authentic founder posts for Twitter/LinkedIn
-```
-
-**Strategic approach:**
-```bash
-/ai-creative-strategist
-```
-
-Research competitors, get creative direction, then execute.
-
-**Quick execution:**
-```bash
-/ai-social-graphics
-/ai-product-photo
-/ai-product-video
-```
-
-**Time:** 30 min - 2 hours | **Result:** Professional social content
+| Mode | What it produces |
+|------|-----------------|
+| Product Photo | Studio-quality product photography with controlled lighting and composition |
+| Product Video | Short-form product videos, demos, and motion content |
+| Social Graphics | Platform-sized graphics for feeds, stories, covers, and carousels |
+| Talking Head | Presenter-style video with lip sync from text or audio |
+| Ad Creative | Performance ad variants with hook-format testing matrices |
 
 ---
 
-### Content Marketing
+## System Requirements
 
-```bash
-/keyword-research      # What to write about
-/seo-content          # Create optimized content
-/content-atomizer     # Distribute everywhere
-```
+**Required:**
+- Claude Code (Claude's official CLI)
 
-**Or plan it systematically:**
-```bash
-Launch content-planner agent
-```
+**Optional (unlocks creative engine):**
+- Replicate API key (`REPLICATE_API_TOKEN` in your `.env` file)
+  Enables AI image generation, video production, and all `/creative` modes.
 
-**Time:** 1-2 hours per piece | **Result:** SEO content + multi-platform distribution
+**Optional (enhances specific skills):**
+- Email ESP API key (Mailchimp, ConvertKit, or HubSpot) for direct email deployment
+- Buffer or Hootsuite API key for social post scheduling
+- GA4 or PostHog for performance tracking
+
+Skills detect your connected tools automatically and adapt. No tool is
+required to start -- every skill produces portable output files you can
+use anywhere.
 
 ---
 
-## 🤖 The Three Agents
-
-### Marketing Strategist
-**Use for:** Complex campaign planning, annual strategy, growth planning
+## File Structure
 
 ```
-"Launch the marketing-strategist agent"
-```
-
-### Copy Editor
-**Use for:** Improving existing copy, A/B test variations, conversion optimization
-
-```
-"Launch the copy-editor agent"
-```
-
-### Content Planner
-**Use for:** Monthly content calendars, multi-channel coordination
-
-```
-"Launch the content-planner agent"
+skills-v2/
+├── README.md                          <- You are here
+├── _system/                           <- Shared infrastructure
+│   ├── brand-memory.md                <- How skills read/write brand context
+│   ├── output-format.md               <- Visual design system for all output
+│   ├── schemas/                       <- JSON Schema contracts for structured data
+│   │   ├── voice-profile.schema.json
+│   │   ├── campaign-brief.schema.json
+│   │   ├── keyword-plan.schema.json
+│   │   ├── email-sequence-summary.schema.json
+│   │   ├── ad-matrix.schema.json
+│   │   └── content-brief.schema.json
+│   └── scripts/                       <- Install, QA, and packaging scripts
+│       ├── install.sh
+│       ├── doctor.sh
+│       ├── e2e-fresh-install.sh
+│       └── package.sh
+├── start-here/
+│   └── SKILL.md                       <- Orchestrator and router
+├── brand-voice/
+│   └── SKILL.md                       <- Voice extraction and building
+├── positioning-angles/
+│   ├── SKILL.md                       <- Market angle discovery
+│   └── references/                    <- Positioning frameworks (Dunford, Hormozi, Schwartz)
+├── keyword-research/
+│   └── SKILL.md                       <- Keyword strategy and clustering
+├── seo-content/
+│   ├── SKILL.md                       <- SEO article production
+│   └── references/                    <- E-E-A-T guidelines and examples
+├── direct-response-copy/
+│   └── SKILL.md                       <- High-conversion copywriting
+├── email-sequences/
+│   └── SKILL.md                       <- Email automation sequences
+├── lead-magnet/
+│   ├── SKILL.md                       <- Lead magnet concept and build
+│   └── references/                    <- Format examples by business type
+├── newsletter/
+│   ├── SKILL.md                       <- Newsletter edition creation
+│   └── references/                    <- Top newsletter breakdowns
+├── content-atomizer/
+│   ├── SKILL.md                       <- Cross-platform repurposing
+│   └── references/                    <- Platform playbook
+└── creative/
+    ├── SKILL.md                       <- Creative engine router
+    ├── modes/                         <- Five production modes
+    │   ├── product-photo.md
+    │   ├── product-video.md
+    │   ├── social-graphics.md
+    │   ├── talking-head.md
+    │   └── ad-creative.md
+    └── references/                    <- Model registry and visual intelligence
+        ├── MODEL_REGISTRY.md
+        └── VISUAL_INTELLIGENCE.md
 ```
 
 ---
 
-## 📊 Track Your Progress
+## How the Skills Work
 
-### Marketing Assets
-```bash
-~/agent-skills/marketing-suite/scripts/track-assets.sh show
+### Brand Memory
+
+Every skill reads from and writes to a shared `./brand/` directory at your
+project root. This is how the system remembers who you are across sessions.
+
+The first time you run `/start-here`, it creates your brand foundation:
+- `voice-profile.md` -- How your brand sounds
+- `positioning.md` -- Your market angle and differentiators
+- `stack.md` -- Your connected tools and integrations
+- `assets.md` -- Registry of everything the system has produced
+- `learnings.md` -- Performance data that makes future output sharper
+
+Skills only read the brand files they need. A keyword researcher does not
+need your voice profile. A copywriter does not need your keyword plan.
+This selective context keeps output focused and specific.
+
+### Skill Chaining
+
+Skills are organized into layers: Foundation, Strategy, Execution, and
+Distribution. Each layer builds on the one before it.
+
+```
+Foundation    /brand-voice + /positioning-angles
+     |
+Strategy      /keyword-research, /lead-magnet, /creative (setup)
+     |
+Execution     /direct-response-copy, /seo-content, /email-sequences,
+              /newsletter, /creative
+     |
+Distribution  /content-atomizer, /creative (ad mode)
 ```
 
-See what you've built, what's missing, and your marketing maturity score (X/10).
+The orchestrator (`/start-here`) handles routing and can chain skills into
+complete workflows. Ask for "a lead magnet funnel" and it will run
+`/lead-magnet`, `/direct-response-copy`, `/email-sequences`, and
+`/content-atomizer` in sequence, passing context between each step.
 
-### Weekly Metrics
-```bash
-~/agent-skills/marketing-suite/scripts/track-metrics.sh add
-```
+### Output Formatting
 
-Track traffic, subscribers, conversions, revenue week-over-week.
+Every skill uses a consistent visual design system built for terminal
+readability. Output follows a four-section structure:
 
-### Export Outputs
-```bash
-~/agent-skills/marketing-suite/scripts/export-output.sh list
-```
+1. **Header** -- What was produced and when
+2. **Content** -- The actual deliverable
+3. **Files Saved** -- Exactly what was written to disk and where
+4. **What's Next** -- Concrete next steps with skill references and time estimates
 
-Save all skill outputs to organized files.
+No markdown rendering, no HTML, no color codes. The visual system uses
+Unicode box-drawing characters and a small set of status indicators
+(`checkmark` for complete, `x` for missing, `star` for recommended).
 
 ---
 
-## 🎓 Learning Path
+## FAQ
 
-### Complete Beginner
+**How do I update my brand voice after it is set?**
 
-1. **Read:** [USER-GUIDE.md](USER-GUIDE.md)
-2. **Run:** `/marketing-suite:audit`
-3. **Follow:** The recommendations it gives you
-4. **Track:** Your progress with the scripts
+Run `/brand-voice` again. It detects the existing profile, shows you a
+summary, and offers targeted update options -- adjust tone, update
+vocabulary, add new samples, or full rebuild.
 
-### Have Some Marketing
+**How do I connect my email tool (Mailchimp, ConvertKit, etc.)?**
 
-1. **Audit:** `/marketing-suite:audit`
-2. **Fill Gaps:** Based on audit recommendations
-3. **Optimize:** Use agents for strategic improvements
-4. **Scale:** Create systems for consistent output
-
-### Advanced User
-
-1. **Strategic Planning:** Use `marketing-strategist` agent
-2. **Content Calendar:** Use `content-planner` agent
-3. **Systematic Creation:** Batch content production
-4. **Data-Driven:** Track metrics, optimize based on results
-
----
-
-## 📚 Documentation
-
-### For Non-Technical Users
-- **[USER-GUIDE.md](USER-GUIDE.md)** - Complete guide with scenarios and examples
-- **[QUICK-START.md](QUICK-START.md)** - Quick reference cheat sheet
-
-### For Technical Users
-- **[marketing-suite/README.md](marketing-suite/README.md)** - Marketing plugin technical docs
-- **[creative-suite/README.md](creative-suite/README.md)** - Creative plugin technical docs
-
-### Plugin Structure
+Add your API key to the `.env` file at your project root:
 ```
-marketing-suite/
-├── skills/          # 10 marketing skills
-├── commands/        # 3 workflow commands
-├── agents/          # 3 specialized agents
-├── hooks/           # Workflow automation
-└── scripts/         # Utility scripts
-
-creative-suite/
-├── skills/          # 6 AI creative skills
-└── hooks/           # Creative workflow
+MAILCHIMP_API_KEY=your-key-here
 ```
+Skills detect connected tools automatically on their next run. The
+orchestrator will confirm the connection in your project scan.
 
----
+**How do I connect the creative engine?**
 
-## 🔄 How They Work Together
-
-### Complete Campaign Workflow
-
-**Foundation:**
-```bash
-/brand-voice              # How you sound
-/positioning-angles       # What makes you different
+Add your Replicate API token to `.env`:
 ```
-
-**Strategy:**
-```bash
-/keyword-research         # What to write about
-/lead-magnet             # What to give away
-/ai-creative-strategist  # Visual direction
+REPLICATE_API_TOKEN=your-token-here
 ```
+Then run `/creative` and it will detect the connection. Without Replicate,
+the creative skill generates detailed prompts and briefs you can use with
+any image/video tool.
 
-**Execution:**
-```bash
-/direct-response-copy    # Write the copy
-/ai-product-photo        # Create the visuals
-/email-sequences         # Build automation
-/seo-content            # Create content
-```
+**How do I get help or see my project status?**
 
-**Distribution:**
-```bash
-/content-atomizer        # Multi-platform content
-/ai-social-graphics      # Social graphics
-/ai-product-video        # Video content
-```
+Run `/start-here` at any time. It scans your entire project, shows what
+exists, identifies gaps, and recommends the highest-impact next action.
 
-Each piece makes the others more effective. You're building a **system**, not using scattered tools.
+**How do I run a multi-step workflow?**
 
----
+Tell the orchestrator what you want in plain language:
+- "Build me a lead magnet funnel"
+- "Launch my product"
+- "Create a content system"
+- "Start a newsletter"
 
-## 💡 Philosophy
+It recognizes these as multi-skill workflows and chains the right skills
+together automatically.
 
-### Systems Over Tactics
+**Can I edit the output files manually?**
 
-These plugins don't just help you create one landing page or one social post. They help you build **marketing and creative systems** that compound over time.
+Yes. Every file the system writes is human-readable markdown. Edit freely.
+Skills check for existing files before overwriting and will show you a
+diff and ask for confirmation before replacing anything.
 
-### Foundation First
+**How does the system improve over time?**
 
-Good marketing starts with:
-1. **Brand Voice** - How you sound
-2. **Positioning** - What makes you different
+After major deliverables, skills ask for feedback. Your responses are
+logged to `./brand/learnings.md`. Future skill runs read relevant
+learnings and adjust their output. The more you use it, the better it
+gets at matching your preferences.
 
-Everything else builds on this foundation.
+**What if I want to start over?**
 
-### Quality Over Quantity
+Run `/start-here` and tell it you want to reset. It will guide you
+through removing the `./brand/` and `./campaigns/` directories. No
+files are deleted without your explicit confirmation.
 
-Better to have:
-- 1 great lead magnet than 5 mediocre ones
-- 1 converting landing page than 10 that don't work
-- 1 email sequence that sells than 100 one-off blasts
+**Where do campaign assets go?**
 
-### Measure Everything
-
-Track:
-- What you've built (assets)
-- How it's performing (metrics)
-- What's working (analytics)
-
-Optimize based on data, not guesses.
+Skills write campaign assets to `./campaigns/{campaign-name}/` with
+subdirectories for emails, social content, ads, and other asset types.
+Every asset is also registered in `./brand/assets.md` so the orchestrator
+can track your full inventory.
 
 ---
 
-## 🎯 Success Stories (Template)
+## Version
 
-### Sarah's Course Launch
-**Before:** 500 email subscribers, no launch experience
-**After:** 47 sales, $14,100 revenue, 9.4% conversion
-**Time:** 25 hours over 4 weeks
-**Tools Used:** launch workflow, positioning, copy, visuals, emails
+v2.0 -- Built February 2026
 
-### Your Story Here
-What will you build with these plugins?
-
----
-
-## 🔧 Technical Details
-
-### Requirements
-- Claude Code CLI
-- For AI image/video generation: Replicate API key
-- For scripts: bash, jq (optional but recommended)
-
-### Installation
-See [QUICK-START.md](QUICK-START.md) for installation instructions.
-
-### Updates
-```bash
-# Uninstall old version
-/plugin uninstall marketing-suite@dev-marketplace
-/plugin uninstall creative-suite@dev-marketplace
-
-# Reinstall updated version
-/plugin install marketing-suite@dev-marketplace
-/plugin install creative-suite@dev-marketplace
-```
-
----
-
-## 📞 Support
-
-### Questions?
-
-1. **Check the guides first:** [USER-GUIDE.md](USER-GUIDE.md)
-2. **Use the orchestrator:** `/orchestrator`
-3. **Run an audit:** `/marketing-suite:audit`
-
-### Feature Requests
-
-This is an open development process. Suggest improvements or new features by updating the plugins directly.
-
----
-
-## 📄 License
-
-MIT License - Use freely for personal and commercial projects.
-
----
-
-## 🚀 Get Started Now
-
-**Don't overthink it. Just start:**
-
-```bash
-# Install the plugins
-/plugin marketplace add dev-marketplace
-/plugin install marketing-suite@dev-marketplace
-/plugin install creative-suite@dev-marketplace
-
-# Then run:
-/orchestrator
-```
-
-**Tell it what you're trying to achieve. It'll handle the rest.**
-
----
-
-## Remember
-
-**You're not learning "tools" - you're building systems.**
-
-Every piece you create makes the next piece easier:
-- Good positioning → Better copy
-- Good copy → Better conversions
-- Good content → More traffic
-- Good visuals → Higher engagement
-
-**Start building your marketing system today.**
+11 marketing skills, 5 creative engine modes, shared brand memory,
+selective context passing, pre-built multi-skill workflows, JSON schema
+contracts for downstream automation, and a visual design system built
+for terminal-native output.
