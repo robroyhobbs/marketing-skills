@@ -291,7 +291,7 @@ Over the next week, I'll send you a few emails showing how to get the most out o
 
 Quick question: What are you hoping to use this for? Hit reply and let me know. I read every response.
 
--- James
+-- [Your Name]
 ```
 
 **Timing:** Immediately after opt-in
@@ -338,7 +338,7 @@ That's what the positioning skill is -- strategy that executes itself.
 
 Tomorrow I'll show you what Sarah found when she ran it on her SaaS product. (Her exact words: "I've been explaining this wrong for two years.")
 
--- James
+-- [Your Name]
 ```
 
 **Timing:** Day 2
@@ -427,11 +427,11 @@ The positioning skill is 1 of 9 in the full system.
 
 Each skill handles a different piece: copy, content, newsletters, lead magnets, email sequences, content distribution.
 
-Together they give Claude a complete marketing methodology -- not prompts, but the actual frameworks behind $400k+ in revenue.
+Together they give Claude a complete marketing methodology -- not prompts, but the actual frameworks senior marketers use.
 
 I'll tell you more about it tomorrow. For now, keep using the positioning skill. It's yours forever.
 
--- James
+-- [Your Name]
 ```
 
 **Timing:** Day 8
@@ -1051,7 +1051,7 @@ After generating the full sequence, display a summary overview using the Sequenc
 
 ### Context
 - Lead magnet: Free positioning-angles skill
-- Paid offer: 9-skill marketing pack ($149)
+- Paid offer: 9-skill marketing pack ([YOUR PRICE])
 - Bridge: One skill -> want the other 8
 - Audience: Founders/marketers using Claude
 
@@ -1077,7 +1077,7 @@ Over the next week, I'll send you a few emails showing how to get more out of th
 
 Quick question: What project are you hoping to use this for? Hit reply and tell me. I read every one.
 
--- James
+-- [Your Name]
 
 ---
 
@@ -1105,7 +1105,7 @@ The positioning skill you downloaded? That's one piece.
 
 Tomorrow I'll show you what happened when Sarah ran it on her SaaS product. (Her words: "I've been explaining this wrong for two years.")
 
--- James
+-- [Your Name]
 
 ---
 
@@ -1136,7 +1136,7 @@ That's what methodology does -- it changes what you see.
 
 Try it again today. Pick something that's not converting the way you want. Find the angle you've been missing.
 
--- James
+-- [Your Name]
 
 P.S. Tomorrow: the one thing the positioning skill can't do (and why it matters).
 
@@ -1162,13 +1162,13 @@ But here's what you can't do with just one skill:
 
 The positioning skill is 1 of 9.
 
-Together they give Claude a complete marketing methodology. Not prompts -- methodology. The frameworks behind $400k+ in 9 months.
+Together they give Claude a complete marketing methodology. Not prompts -- methodology. The kind of frameworks senior marketers spend years learning.
 
 I'll tell you more about the full system tomorrow.
 
 For now, keep finding angles. The skill is yours forever.
 
--- James
+-- [Your Name]
 
 ---
 
@@ -1176,13 +1176,13 @@ For now, keep finding angles. The skill is yours forever.
 
 **Send:** Day 8
 **Subject:** The full system (if you want it)
-**Preview:** 9 skills, one methodology, $149
+**Preview:** 9 skills, one methodology, [YOUR PRICE]
 
 You've been using the positioning skill for a week.
 
 If you're finding it useful, here's what else is available:
 
-**The Vibe Marketing Skills Pack -- $149**
+**[YOUR PRODUCT NAME] -- [YOUR PRICE]**
 
 9 skills that give Claude a complete marketing methodology:
 
@@ -1210,13 +1210,13 @@ Plus the orchestrator -- a meta-skill that tells you which skill to run and in w
 - You want someone to do it for you (this is a tool, not a service)
 - You don't do your own marketing
 
-$149 once. All 9 skills. All future updates.
+[YOUR PRICE] once. All 9 skills. All future updates.
 
-[GET THE FULL SYSTEM]
+[GET THE FULL SYSTEM -- LINK]
 
 No pressure. The positioning skill is yours either way.
 
--- James
+-- [Your Name]
 
 ---
 
@@ -1228,7 +1228,7 @@ No pressure. The positioning skill is yours either way.
 
 Last email about this, then I'll leave you alone.
 
-The skills pack is $149. That's $16.55 per skill.
+The skills pack is [YOUR PRICE]. That's less than the cost of one hour with a consultant.
 
 For context:
 - A brand strategist charges $2,000-5,000
@@ -1237,17 +1237,17 @@ For context:
 
 You get methodology that handles all of it. Reusable. Forever.
 
-The question isn't "is $149 a lot?" It's "what's one good landing page worth?"
+The question isn't "is [YOUR PRICE] a lot?" It's "what's one good landing page worth?"
 
 If a better angle, clearer copy, or smarter content strategy gets you even ONE extra customer, you've made the money back.
 
-[GET THE SKILLS PACK -- $149]
+[GET THE SKILLS PACK -- LINK]
 
 If you have questions, hit reply. I answer everything.
 
--- James
+-- [Your Name]
 
-P.S. 200+ marketers are using this system. Join them: [LINK]
+P.S. [X]+ marketers are using this system. Join them: [LINK]
 
 ---
 
@@ -1267,7 +1267,7 @@ After this, I'll go back to regular emails -- tactics, strategies, things I'm le
 
 If you want the skills pack later, it'll be here: [LINK]
 
--- James
+-- [Your Name]
 
 ---
 
@@ -1420,7 +1420,7 @@ Over the next week, I'll send you a few emails showing how to get more out of th
 
 Quick question: What project are you hoping to use this for? Hit reply and tell me. I read every one.
 
--- James
+-- [Your Name]
 
 ---
 

@@ -640,7 +640,7 @@ Lead with proof:
 
 > "Last month, this landing page generated $127,394 in sales."
 
-> "In 9 months, we did $400k+ on a vibe-coded website using these exact methods."
+> "In 9 months, we scaled to $400k+ using these exact methods."
 
 > "I've sent 600 million of these letters. Here's what I learned."
 
@@ -1501,7 +1501,7 @@ Internet-native voice marker. Creates trust through specific vulnerability:
 
 > "$65K MRR" in bio
 
-> "The Vibe Marketing community did $400k+ in 9 months."
+> "Our community did $400k+ in 9 months."
 
 **Why it works:**
 - Specific numbers corporate would never share

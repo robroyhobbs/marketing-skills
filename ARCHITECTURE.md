@@ -436,4 +436,4 @@ The output format system uses Unicode box-drawing characters instead of markdown
 
 ---
 
-*This document provides a complete architectural reference for third-party analysis of the Vibe Marketing Skills v2.0 system. The source code is at `/Users/jmdickerson2/Code/the-vibe-marketer/skills-v2/`.*
+*This document provides a complete architectural reference for the Vibe Marketing Skills v2.0 system.*
