@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Vibe Marketing Skills — Installer
-# Installs all 11 skills to ~/.claude/skills/vibe-marketing/
-# Usage: bash install.sh [--claude-only]
+# Installs all 11 skills for Claude Code, OpenAI Codex, and/or GitHub Copilot CLI
+# Usage: bash install.sh [--platform claude-code|codex|copilot|all] [--claude-only]
 
 set -e
 

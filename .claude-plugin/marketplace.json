@@ -5,75 +5,75 @@
     "url": "https://github.com/robroyhobbs"
   },
   "metadata": {
-    "description": "Vibe Marketing Skills v2.0 — 11 marketing skills that build on each other, remember your brand, and get sharper every time you use them.",
-    "version": "2.0.0",
+    "description": "Vibe Marketing Skills v2.1 — 11 marketing skills for Claude Code, OpenAI Codex, and GitHub Copilot CLI. Build on each other, remember your brand, get sharper every time.",
+    "version": "2.1.0",
     "homepage": "https://github.com/robroyhobbs/marketing-skills"
   },
   "skills": [
     {
       "name": "start-here",
       "description": "Orchestrator — scans your project, builds brand foundation, routes to the right skill",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "source": "github:robroyhobbs/marketing-skills/start-here"
     },
     {
       "name": "brand-voice",
       "description": "Extract or build a voice profile so every piece of content sounds like you",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "source": "github:robroyhobbs/marketing-skills/brand-voice"
     },
     {
       "name": "positioning-angles",
       "description": "Find the market angle that makes your offer stand out and sell",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "source": "github:robroyhobbs/marketing-skills/positioning-angles"
     },
     {
       "name": "keyword-research",
       "description": "Map your content territory with data-backed keyword clusters and priorities",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "source": "github:robroyhobbs/marketing-skills/keyword-research"
     },
     {
       "name": "lead-magnet",
       "description": "Generate lead magnet concepts and build the actual content",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "source": "github:robroyhobbs/marketing-skills/lead-magnet"
     },
     {
       "name": "direct-response-copy",
       "description": "Write landing pages, sales copy, headlines, and CTAs that convert",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "source": "github:robroyhobbs/marketing-skills/direct-response-copy"
     },
     {
       "name": "seo-content",
       "description": "Produce long-form articles optimized for search that read like a human wrote them",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "source": "github:robroyhobbs/marketing-skills/seo-content"
     },
     {
       "name": "email-sequences",
       "description": "Build welcome, nurture, launch, and re-engagement email sequences",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "source": "github:robroyhobbs/marketing-skills/email-sequences"
     },
     {
       "name": "newsletter",
       "description": "Create newsletter editions and format templates modeled on top creators",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "source": "github:robroyhobbs/marketing-skills/newsletter"
     },
     {
       "name": "content-atomizer",
       "description": "Repurpose one piece of content into platform-optimized posts across 8 platforms",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "source": "github:robroyhobbs/marketing-skills/content-atomizer"
     },
     {
       "name": "creative",
       "description": "AI-powered image, video, and graphic generation across five production modes",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "source": "github:robroyhobbs/marketing-skills/creative"
     }
   ]
