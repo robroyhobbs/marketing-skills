@@ -3,8 +3,8 @@
 **System file for Vibe Marketing Skills v2**
 Every skill MUST follow this formatting specification. This is the visual design
 system that makes our output feel like a report from a senior marketing
-professional -- not a chatbot reply. The formatting is a core part of the $299+
-product experience.
+professional -- not a chatbot reply. The formatting is a core part of what makes
+this system feel like senior-level output, not a chatbot reply.
 
 ---
 

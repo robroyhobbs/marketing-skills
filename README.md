@@ -35,7 +35,7 @@ bash install.sh --platform all           # All platforms
 |----------|---------|
 | Claude Code | `/start-here` |
 | OpenAI Codex | `$start-here` |
-| Copilot CLI | "Scan my project and get started with marketing" |
+| Copilot CLI | Copy `AGENTS.md` to your project root, then ask Copilot for marketing help |
 
 That's it. The orchestrator scans your project, asks two questions, builds your
 brand foundation, and routes you to the right skill.
@@ -132,31 +132,38 @@ work inside it directly.
 
 The installer creates two integration layers:
 
-**1. AGENTS.md** — installed to `~/.copilot/skills/` for instruction-based
-discovery. Add to your shell profile:
+**1. AGENTS.md** — installed alongside skills so Copilot's coding agent
+can discover and follow the marketing methodology. Copilot natively reads
+`AGENTS.md` files for custom instructions. The simplest approach is to
+copy the `AGENTS.md` to your project root:
 
 ```bash
-export COPILOT_CUSTOM_INSTRUCTIONS_DIRS="$HOME/.copilot/skills"
+cp ~/.copilot/skills/AGENTS.md /path/to/your/project/AGENTS.md
 ```
 
 **2. Native .agent.md files** — installed to `~/.copilot/agents/` for
-direct agent invocation:
+environments that support custom agent profiles:
 
 ```
-gh copilot --agent vibe-start-here
-gh copilot --agent vibe-brand-voice
-gh copilot --agent vibe-direct-response-copy
+vibe-start-here.agent.md
+vibe-brand-voice.agent.md
+vibe-direct-response-copy.agent.md
 ```
 
-Or describe what you need in natural language:
+Then describe what you need in natural language when working with Copilot:
 
 ```
-gh copilot "scan my project and help me with marketing"
-gh copilot "write a welcome email sequence"
-gh copilot "find positioning angles for my product"
+"scan my project and help me with marketing"
+"write a welcome email sequence"
+"find positioning angles for my product"
 ```
 
 Copilot reads the AGENTS.md and loads the appropriate skill methodology.
+
+> **Note:** Copilot CLI integration depends on your Copilot plan and
+> version. The AGENTS.md approach works with Copilot coding agent. Check
+> [GitHub's docs](https://docs.github.com/en/copilot) for the latest
+> on custom agent support.
 
 ---
 

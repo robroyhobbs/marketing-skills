@@ -33,6 +33,10 @@ VERSION="2.1"
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --platform)
+      if [[ -z "${2:-}" ]]; then
+        echo "Error: --platform requires an argument (claude-code, codex, copilot, all)"
+        exit 1
+      fi
       PLATFORM="$2"
       shift 2
       ;;
@@ -118,10 +122,10 @@ get_skills_dir() {
       echo "${TVM_INSTALL_HOME:-$HOME/.claude}/skills"
       ;;
     codex)
-      echo "$HOME/.agents/skills"
+      echo "${TVM_INSTALL_HOME:-$HOME/.agents}/skills"
       ;;
     copilot)
-      echo "$HOME/.copilot/skills"
+      echo "${TVM_INSTALL_HOME:-$HOME/.copilot}/skills"
       ;;
   esac
 }
@@ -261,7 +265,16 @@ generate_agents_md() {
   local target_dir="$1"
   local agents_file="$target_dir/AGENTS.md"
 
-  cat > "$agents_file" << 'AGENTS_EOF'
+  # Build skill table dynamically based on what was actually installed
+  local skill_rows=""
+  for skill in "${SKILLS[@]}"; do
+    local desc
+    desc="$(get_skill_description "$skill")"
+    skill_rows="${skill_rows}| \`${skill}\` | \`${skill}/SKILL.md\` | ${desc} |
+"
+  done
+
+  cat > "$agents_file" << AGENTS_EOF
 # Vibe Marketing Skills — Agent Instructions
 
 You have access to a complete marketing skill system installed in this directory.
@@ -272,31 +285,20 @@ but executable frameworks you follow step by step.
 
 When the user asks for marketing help, load and follow the relevant skill:
 
-| Task | Skill File | What It Does |
-|------|-----------|--------------|
-| "Get started" / "scan my project" | `start-here/SKILL.md` | Orchestrator — scans project, builds brand foundation, routes to right skill |
-| "Define my voice" / "brand voice" | `brand-voice/SKILL.md` | Extracts or builds a voice profile from existing content or interviews |
-| "Find my angle" / "positioning" | `positioning-angles/SKILL.md` | Competitive research + market angle discovery |
-| "Write copy" / "landing page" | `direct-response-copy/SKILL.md` | High-conversion copywriting with 7 proven frameworks |
-| "Keyword research" / "content strategy" | `keyword-research/SKILL.md` | Data-backed keyword clustering and content planning |
-| "Write an article" / "SEO content" | `seo-content/SKILL.md` | Search-optimized long-form content with SERP analysis |
-| "Email sequence" / "welcome emails" | `email-sequences/SKILL.md` | Build complete email automation sequences |
-| "Lead magnet" / "freebie" / "opt-in" | `lead-magnet/SKILL.md` | Concept and build lead magnets (checklists, templates, guides) |
-| "Newsletter" / "weekly email" | `newsletter/SKILL.md` | Newsletter edition creation modeled on top creators |
-| "Repurpose" / "distribute" / "social posts" | `content-atomizer/SKILL.md` | Transform content into platform-optimized posts across 8 platforms |
-| "Product photo" / "video" / "graphics" | `creative/SKILL.md` | AI image, video, and graphic generation (requires Replicate API) |
-
+| Skill | Skill File | What It Does |
+|-------|-----------|--------------|
+${skill_rows}
 ## How to Use
 
-1. Read the relevant `SKILL.md` file for the user's request
+1. Read the relevant \`SKILL.md\` file for the user's request
 2. Follow its instructions exactly — each skill contains complete methodology
-3. Read `_system/brand-memory.md` to understand how brand context is shared
-4. Read `_system/output-format.md` for the visual design system all output follows
+3. Read \`_system/brand-memory.md\` to understand how brand context is shared
+4. Read \`_system/output-format.md\` for the visual design system all output follows
 
 ## Brand Memory
 
-Skills read from and write to a `./brand/` directory in the user's project.
-This persists brand identity across sessions. See `_system/brand-memory.md` for the protocol.
+Skills read from and write to a \`./brand/\` directory in the user's project.
+This persists brand identity across sessions. See \`_system/brand-memory.md\` for the protocol.
 
 ## Multi-Skill Workflows
 
@@ -413,14 +415,14 @@ for target in "${TARGETS[@]}"; do
       info "Or describe your task — Codex matches skills by description automatically."
       ;;
     copilot)
-      # Copilot CLI: AGENTS.md for instruction discovery + .agent.md for native agents
+      # Copilot: AGENTS.md for coding agent discovery + .agent.md for custom agent profiles
       AGENTS_PATH=$(generate_agents_md "$SKILLS_DIR")
       AGENT_COUNT=$(generate_copilot_agents "$SKILLS_DIR")
       success "$INSTALLED_COUNT skills installed to $SKILLS_DIR"
       success "Generated $AGENTS_PATH"
-      success "$AGENT_COUNT native .agent.md files in ~/.copilot/agents/"
-      info "Add to your shell: export COPILOT_CUSTOM_INSTRUCTIONS_DIRS=\"$SKILLS_DIR\""
-      info "Or invoke directly: gh copilot --agent vibe-brand-voice"
+      success "$AGENT_COUNT .agent.md profiles in ~/.copilot/agents/"
+      info "Copy AGENTS.md to your project root for Copilot coding agent integration."
+      info "  cp $SKILLS_DIR/AGENTS.md /path/to/your/project/AGENTS.md"
       ;;
   esac
 
@@ -452,7 +454,7 @@ for target in "${TARGETS[@]}"; do
   case "$target" in
     claude-code) echo -e "    Claude Code:  ${CYAN}/start-here${RESET}" ;;
     codex)       echo -e "    Codex:        ${CYAN}\$start-here${RESET}" ;;
-    copilot)     echo -e "    Copilot CLI:  ${CYAN}\"scan my project and get started with marketing\"${RESET}" ;;
+    copilot)     echo -e "    Copilot CLI:  ${CYAN}Copy AGENTS.md to your project root${RESET}" ;;
   esac
 done
 echo ""
