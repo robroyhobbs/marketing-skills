@@ -1,13 +1,13 @@
-# Vibe Marketing Skills v2.0 — Architecture Deep Dive
+# Vibe Marketing Skills v2.1 — Architecture Deep Dive
 
-**Version:** v2.0 | **Date:** February 2026 | **Platform:** Claude Code
+**Version:** v2.1 | **Date:** March 2026 | **Platforms:** Claude Code, OpenAI Codex, GitHub Copilot CLI
 **Total System:** 11 skills, 134 files, 15,310 lines of SKILL.md, 417KB distributable
 
 ---
 
 ## 1. What This Is
 
-An agentic marketing skill system for Claude Code that gives founders and small teams senior-level marketing output. Not prompt templates — executable methodology. Each skill embeds deep domain expertise (100+ years of direct response copywriting, live SERP analysis, competitive intelligence) into decision frameworks that Claude follows.
+An agentic marketing skill system for AI-powered CLI tools that gives founders and small teams senior-level marketing output. Not prompt templates — executable methodology. Each skill embeds deep domain expertise (100+ years of direct response copywriting, live SERP analysis, competitive intelligence) into decision frameworks the AI follows.
 
 The system remembers your brand across sessions, passes selective context between skills, and improves with every interaction through a learnings feedback loop.
 
@@ -373,7 +373,17 @@ All schemas use JSON Schema draft 2020-12 with required/optional field separatio
 
 ### 8.1 Installation
 
-`install.sh` copies the skill suite to `~/.claude/skills/vibe-marketing/`. Supports `--claude-only` mode (excludes creative engine for users without Replicate). Preserves script execute permissions. Validates source before copying.
+`install.sh` is a multi-platform installer supporting Claude Code, OpenAI Codex, and GitHub Copilot CLI. Auto-detects installed platforms and installs to the appropriate directories:
+
+| Platform | Install Path | Invocation |
+|----------|-------------|------------|
+| Claude Code | `~/.claude/skills/` | `/skill-name` |
+| OpenAI Codex | `~/.agents/skills/` | `$skill-name` or implicit matching |
+| GitHub Copilot CLI | `~/.copilot/skills/` + `AGENTS.md` | Natural language via `gh copilot` |
+
+Supports `--platform <target>` for explicit platform selection and `--claude-only` mode (excludes creative engine for users without Replicate). Preserves script execute permissions. Validates source before copying.
+
+**Key insight:** Claude Code and Codex use the identical SKILL.md format (YAML frontmatter with `name` and `description`), so the same files work natively on both. Copilot CLI uses an auto-generated AGENTS.md that maps user intents to the appropriate skill files.
 
 ### 8.2 Health Checks
 
@@ -399,11 +409,12 @@ The system has 11 skills, not 50. Each one is substantive (average 1,392 lines).
 
 ### 9.2 Markdown Over Code
 
-Skills are pure markdown, not code. Claude reads and follows the instructions. This means:
+Skills are pure markdown, not code. The AI reads and follows the instructions. This means:
 - **Pro:** No runtime dependencies, no build step, no versioning conflicts
 - **Pro:** Skills are human-readable and editable by non-developers
-- **Pro:** The same skill file works across Claude Code, Claude Desktop, and API
-- **Con:** No programmatic enforcement of the Context Matrix — Claude must follow instructions
+- **Pro:** The same skill file works across Claude Code, Codex, Copilot CLI, and API
+- **Pro:** Platform portability — one source of truth, multiple install targets
+- **Con:** No programmatic enforcement of the Context Matrix — the AI must follow instructions
 - **Con:** No automated testing of skill behavior (only structure/installation testing)
 
 ### 9.3 Selective Context Over Full Context
